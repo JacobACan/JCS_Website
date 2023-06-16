@@ -1,0 +1,59 @@
+.song_description {
+  height: 20rem;
+  width: 20rem;
+  letter-spacing: .1rem;
+ text-shadow: 0 1rem 5rem var-(--black);
+ font-size: large;
+}
+.song_title {
+ text-shadow: 0 1rem 5rem var(--gray);
+}
+
+.song_player {
+  display: grid;
+  grid-template-rows:24rem ;
+  grid-template-columns: 24rem;
+}
+
+.song_cover {
+  width:24rem ;
+  height: 24rem;
+  width:24rem ;
+  height: 24rem;
+  grid-area: 1 /1 /-1/-1;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: filter ease .2s;
+}
+.play_head {
+  width:24rem ;
+  height: 24rem;
+  grid-area: 1 /1 /-1/-1;
+  opacity: 0%;
+  transform: scale(.15);
+  transition: transform ease .1s;
+}
+
+.song_player:hover .song_cover {
+  background-color: var(--black);
+  filter: brightness(60%);
+  cursor: pointer;
+}
+.song_player:hover .play_head {
+  cursor: pointer;
+  opacity: 70%;
+  transform: scale(.2);
+}
+
+
+.song_release_date {
+
+}
+
+.song_container {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  --tw-space-x-reverse: 0;
+  margin-right: calc(4.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(4.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
