@@ -63,5 +63,5 @@
 }
 
 .blurdark {
-  filter: blur(5px) brightness(50%);
+  filter: blur(2px) brightness(10%);
 }
