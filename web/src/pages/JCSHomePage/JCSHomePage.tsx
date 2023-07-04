@@ -1,11 +1,7 @@
 import { MetaTags } from '@redwoodjs/web'
 
-import Products from 'src/components/Products/Products'
-import Song from 'src/components/Song/Song'
-import Songs from 'src/components/Songs/Songs'
-
-import Logo from './media/Logo2.png'
-import Shooting_Star from './media/Shooting_Star.png'
+import GreenStudio from './media/GreenStudio.png'
+import PatternGreen from './media/PatternGreen.png'
 
 const JcsHomePage = () => {
   return (
@@ -14,16 +10,18 @@ const JcsHomePage = () => {
 
       <div className="paralax-wrapper">
         <section className="paralax-contents">
-          <img className="background_logo" src={Logo} alt="" />
-          <img className="background_image" src={Shooting_Star} alt="" />
+          <img className="background_image" src={GreenStudio} alt="" />
           <div className="background_break"></div>
-          <div>
-            <Song></Song>
-            <h1 className="latest_release"></h1>
+          <div className="vgrid3">
+            <h1 id="home-title">Jacob Canedy</h1>
+            <p id="home-quick-description">Developer • Producer • Singer</p>
+            <div className="vgrid3 space-y-7">
+              <button id="home-button1">Music</button>
+              <button id="home-button2"> Products</button>
+            </div>
           </div>
         </section>
-        <Songs></Songs>
-        <Products></Products>
+        <img className="blurdark w-[100%]" src={PatternGreen} alt="" />
       </div>
     </>
   )

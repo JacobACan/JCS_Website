@@ -1,0 +1,67 @@
+#home-title {
+  font-size: 10rem;
+  margin: 0;
+  letter-spacing: .8rem;
+  filter: drop-shadow(.4rem .4rem 0 var(--mid)) drop-shadow(.8rem .8rem 0 var(--dark)) ;
+}
+
+#home-quick-description {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: .2rem;
+  filter: drop-shadow(.1rem .1rem 0 var(--mid)) drop-shadow(.2rem .2rem 0 var(--dark));
+
+}
+#home-button2 {
+  background-color: var(--dark);
+  border-radius: var(--border-radius);
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  height: 4rem;
+  filter: drop-shadow(.2rem .2rem 0 var(--light)) ;
+  font-size: 2rem;
+  color: var(--mid);
+  font-family: var(--font-main);
+  transition: background-Color ease .2s, color ease .2s;
+}
+#home-button2:hover {
+  background-color: var(--mid);
+  color: var(--dark);
+}
+
+#home-button1 {
+  background-color: var(--mid);
+  border-radius: var(--border-radius);
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 4rem;
+  filter: drop-shadow(.2rem .2rem 0 var(--light)) ;
+  font-size: 2rem;
+  color: var(--light);
+  font-family: var(--font-main);
+  transition: background-Color ease .2s, color ease .2s;
+
+}
+#home-button1:hover {
+  background-color: var(--light);
+  color: var(--mid);
+}
+
+#home-button3 {
+  background-color: var(--light);
+  border-radius: var(--border-radius);
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 4rem;
+  filter: drop-shadow(.2rem .2rem 0 var(--mid)) ;
+  font-size: 2rem;
+  color: var(--dark);
+  font-family: var(--font-main);
+}
+
+.blurdark {
+  filter: blur(5px) brightness(50%);
+}
