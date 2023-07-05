@@ -10,6 +10,7 @@
 
  @import 'style.css';
  @import 'pages/JCSHomePage/JCSHomePage.css';
+ @import 'pages/SongsPage/SongsPage.css';
 
  /* @import 'tailwindcss/base'; */
  @import 'tailwindcss/components';

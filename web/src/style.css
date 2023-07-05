@@ -5,6 +5,7 @@
   --mid : rgb(42, 102, 42);
   --light : rgb(255, 245, 225);
   --font-main : 'Bigshot One', cursive;
+  --margin-sides : 11vw;
 }
 
 body {
@@ -42,14 +43,12 @@ p {
   height: 100px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-}
-
 #redwood-app {
   padding: 0;
   margin: 0;
 }
+
+/* Remove Button Display */
 button, input[type="submit"], input[type="reset"] {
 	background: none;
 	color: inherit;
@@ -60,83 +59,16 @@ button, input[type="submit"], input[type="reset"] {
 	outline: inherit;
 }
 
-.paralax-wrapper {
- height: 100vh;
- overflow-y: auto;
- overflow-x: hidden;
- perspective: 100px;
- margin: 0;
- padding: 0;
+.blurdark {
+  filter: blur(2px) brightness(10%);
 }
 
-
-
-.paralax-contents {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  transform-style: preserve-3d;
-  z-index: -1;
-}
-
-.background_logo, .background_image   {
+.margin-box {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.background_break{
-  position: absolute;
- background-color: var(--black);
- width: 100vw;
- height: 100vh;
-  z-index: -1;
-  transform: translateZ(-50px) scale(2) translateY(0);
-  opacity: 40%;
-}
-
-.background_logo {
-  transform: translateZ(-70px) scale(.7) translateY(-20vh) rotate3d(1, .2, 0, 1.5deg);
-}
-
-.background_image {
-  transform: translateZ(-100px) scale(2.1);
-  filter: blur(1px) brightness(90%);
-}
-
-
-.latest_release {
- text-shadow: 0px 0px 5px var(--black);
- transform: translateY(0vh) scale(.4);
- color: var(--light-blue);
-}
-.section_title {
-  text-shadow: 0px 0px 2rem var(--black);
-  font-size: 10vh;
-  margin-left: 2vw;
- transform: translateY(-7vh) ;
-}
-
-.page_section_black {
-  color: var(--pink);
-  justify-content: center;
-  align-items: center;
-  margin-top: -20px;
-  padding: 0;
-  height: 100vh;
-  background-color: var(--black);
-}
-
-.vgrid2 {
+  left: var(--margin-sides);
+  width: calc(100vw - (2 * var(--margin-sides)) );
   display: grid;
-  grid-template-rows: auto auto;
-}
-.vgrid3 {
-  display: grid;
-  grid-template-rows: auto auto;
+  grid-template-columns: 16.25vw 16.25vw 16.25vw 16.25vw 16.25vw 16.25vw;
+  gap: .5vw;
 }
 
