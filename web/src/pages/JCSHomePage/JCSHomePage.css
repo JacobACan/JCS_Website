@@ -120,7 +120,6 @@
   transform-style: preserve-3d;
   display: grid;
   grid-template-rows: auto auto;
-  z-index: 1;
  }
 
  .image-frame {
@@ -133,6 +132,7 @@
     background: none;
     position: fixed;
     border-radius: 50px;
+    pointer-events: none;
  }
  .image-frame-fill {
   box-sizing: border-box;
@@ -143,6 +143,7 @@
     border: 25px solid var(--dark);
     background: none;
     position: fixed;
+    pointer-events: none;
 
  }
 
