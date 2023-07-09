@@ -7,10 +7,10 @@ import SongsPage from '../SongsPage/SongsPage'
 import GreenStudio from './media/GreenStudio.png'
 
 const JcsHomePage = () => {
-  const PhoneWidth = 650
-  const [isPhone, setIsPhone] = useState(window.innerWidth < PhoneWidth)
+  const phoneWidth = 700
+  const [isPhone, setIsPhone] = useState(window.innerWidth < phoneWidth)
   window.addEventListener('resize', (e: any) => {
-    e.target && e.target.innerWidth < PhoneWidth
+    e.target && e.target.innerWidth < phoneWidth
       ? setIsPhone(true)
       : setIsPhone(false)
   })
@@ -25,7 +25,8 @@ const JcsHomePage = () => {
       <div className="paralax-wrapper">
         <section className="paralax-contents">
           <img className={`background_image`} src={GreenStudio} alt="" />
-          <div className="background_break"></div>
+          {/* <div className="image-frame"></div>
+          <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${responsitivity()}`}>
               Jacob Canedy
@@ -40,6 +41,10 @@ const JcsHomePage = () => {
               <button
                 id="home-button1"
                 className={`home-button${responsitivity()}`}
+                onClick={() => {
+                  console.log('scrolling')
+                  window.scrollTo({ behavior: 'smooth', top: 1000 })
+                }}
               >
                 Latest Music
               </button>

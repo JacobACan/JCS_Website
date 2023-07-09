@@ -6,16 +6,19 @@
 .home-title-desktop {
   font-size: 10rem;
   letter-spacing: .8rem;
+  transform: translateZ(-60px);
 }
 .home-title-phone {
   font-size: 24vw;
   letter-spacing: .8vw;
+  transform: translateZ(-60px);
 }
 
 
 #home-quick-description {
   text-align: center;
   filter: drop-shadow(.1rem .1rem 0 var(--mid)) drop-shadow(.2rem .2rem 0 var(--dark));
+  transform: translateZ(-60px);
 }
 .home-quick-description-desktop {
   font-size: 2rem;
@@ -36,6 +39,7 @@
   color: var(--mid);
   font-family: var(--font-main);
   transition: background-Color ease .2s, color ease .2s;
+  transform: translateZ(-60px);
 }
 #home-button2:hover {
   background-color: var(--mid);
@@ -52,6 +56,7 @@
   color: var(--light);
   font-family: var(--font-main);
   transition: background-Color ease .2s, color ease .2s;
+  transform: translateZ(-60px);
 
 }
 #home-button1:hover {
@@ -89,22 +94,12 @@
    z-index: -1;
  }
 
- .background_logo, .background_image   {
+ .background_image   {
    position: absolute;
    width: 100%;
    height: 100%;
    object-fit: cover;
    z-index: -1;
- }
-
- .background_break{
-   position: absolute;
-  background-color: var(--black);
-  width: 100vw;
-  height: 100vh;
-   z-index: -1;
-   transform: translateZ(-50px) scale(2) translateY(0);
-   opacity: 40%;
  }
 
  .background_logo {
@@ -122,8 +117,33 @@
  }
 
  .vgrid3 {
-   display: grid;
-   grid-template-rows: auto auto;
+  transform-style: preserve-3d;
+  display: grid;
+  grid-template-rows: auto auto;
+  z-index: 1;
+ }
+
+ .image-frame {
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    border: 25px solid var(--dark);
+    background: none;
+    position: fixed;
+    border-radius: 50px;
+ }
+ .image-frame-fill {
+  box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    border: 25px solid var(--dark);
+    background: none;
+    position: fixed;
+
  }
 
 

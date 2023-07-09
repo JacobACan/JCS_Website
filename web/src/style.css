@@ -6,6 +6,7 @@
   --light : rgb(255, 245, 225);
   --font-main : 'Bigshot One', cursive;
   --margin-sides : 11vw;
+  --page-title-font-size : 8vw
 }
 
 body {
@@ -26,26 +27,16 @@ p {
   font-family: var(--font-main);
   color: var(--light);
 }
-
-::-webkit-scrollbar {
-  background-color: var(--black);
-  width: 10px;
-  height: 100px;
+ul {
+  font-family: var(--font-main);
+  color: var(--light);
+}
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background-color: var(--black);
-  width: 10px;
-  height: 100px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background-color: var(--black);
-  width: 10px;
-  height: 100px;
-}
 
 #redwood-app {
   padding: 0;
@@ -64,7 +55,8 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .blurdark {
-  filter: blur(4px) brightness(50%);
+  filter: blur(128px) brightness(50%);
+  opacity: 50%;
 }
 
 .margin-box {
@@ -77,24 +69,36 @@ button, input[type="submit"], input[type="reset"] {
   --col-width : calc((100vw - (2* var(--margin-sides)) - (var(--columns) - 1) * var(--gap)) / var(--columns));
   grid-template-columns: var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width);
   grid-auto-rows: var(--col-width);
+
   gap: var(--gap);
+
 }
 
 .background-image-phone {
   position: fixed;
-  object-fit: contain;
+  object-fit: cover;
   height: 100vh;
-  left: -50vw;
+  width: 100vw;
+  object-position: 0 -50vh;
   overflow-x: hidden;
+}
+.background-image-desktop {
+  position: fixed;
+  object-fit: cover;
+  object-position: 0 -50vh;
+  width: 150vw;
+  height: 100vh;
+  overflow-x: hidden;
+  left: -10vw;
 }
 .theme-background {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: linear-gradient(135deg ,var(--mid) 0% ,var(--dark) 100% );
+  background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
 }
 
-.button2 {
+.button-dark {
   background-color: var(--dark);
   border-radius: var(--border-radius);
   height: 4rem;
@@ -105,7 +109,7 @@ button, input[type="submit"], input[type="reset"] {
   transition: background-Color ease .2s, color ease .2s;
   width: 100%;
 }
-.button2:hover {
+.button-dark:hover {
   background-color: var(--mid);
   color: var(--dark);
 }

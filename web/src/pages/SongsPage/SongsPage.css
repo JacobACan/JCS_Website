@@ -1,12 +1,39 @@
-.song-cover {
-  border-radius: var(--border-radius);
-  animation-duration: 1s;
+
+#songs-page-background {
+  animation-duration: 60s;
   animation-timing-function: cubic-bezier();
   animation-fill-mode: forwards;
+}
+
+#songs-page-title {
+  grid-area: 1 / 2 / 1 / 6;
+  font-size: var(--page-title-font-size);
+  text-align: center;
+  margin: 0;
+  filter: drop-shadow(.2rem .2rem 0var(--dark))  ;
+  mix-blend-mode: difference;
+  z-index: 1;
+}
+
+.song-cover {
+  border-radius: var(--border-radius);
+  animation-duration: .5s;
+  animation-timing-function: cubic-bezier();
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0rem 0rem 1rem var(--dark));
 }
 .song-cover-phone {
   grid-area: 3 / 1 / 3 / 6;
   width: inherit;
+}
+.song-cover-desktop {
+  position: relative;
+  grid-area: 2 / 2 / 2 / 4;
+  width: 100%;
+}
+.song-cover-desktop:hover {
+  cursor: pointer;
+  filter: brightness(120%);
 }
 .song-title-phone {
   grid-area: 2 / 1 / 2 / -1;
@@ -14,23 +41,78 @@
   align-self: end;
   margin: 0;
 }
+.song-title-desktop {
+  grid-area: 1 / 2 / 1 / 4;
+  position: relative;
+  text-align: center;
+  align-self: end;
+  margin: 0;
+  top: 1rem;
+  z-index: 1;
+  mix-blend-mode: difference;
+
+}
 .song-date-phone {
   grid-area: 9 / 1 / 9 / 6;
   text-align: center;
   width: inherit;
   margin: 0;
+  display: none;
+}
+.song-date-desktop {
+  display: none;
 }
 .song-description-phone {
   grid-area: 10 / 1 / 10 / 6;
   width: inherit;
   text-align: center;
 }
+.song-description-desktop {
+  grid-area: 2 / 4 / 4 / 6;
+  position: relative;
+  text-align: left;
+  mix-blend-mode: difference;
 
-@keyframes scale {
-  from {
+}
+
+@keyframes scale-down {
+  0% {
+    transform: scale(.95);
+  }
+  30% {
+    transform: scale(.7);
+  }
+  70% {
+    transform: scale(.81);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
+
+@keyframes scale-up {
+  0% {
+    transform : scale(.8);
+  }
+  20% {
+    transform: scale(.7);
+  }
+  70% {
+    transform: scale(1.01);
+  }
+  100% {
     transform: scale(1);
   }
-  to {
-    transform: scale(.8);
+}
+
+@keyframes scroll-right {
+  0% {
+    object-position: 0 -50vh;
+  }
+  50% {
+    object-position: -50vw -50vh;
+  }
+  100% {
+    object-position: 0 -50vh;
   }
 }
