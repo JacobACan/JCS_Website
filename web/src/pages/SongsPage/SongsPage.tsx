@@ -11,6 +11,7 @@ interface Props {
 
 const SongsPage = ({ responsitivity }: Props) => {
   const [audio, setAudio] = useState(new Audio())
+  const [isPlaying, setIsPlaying] = useState(false)
   const TRACK_QUERY = gql`
     query Track($recency: Int!) {
       track(recency: $recency) {
@@ -37,15 +38,29 @@ const SongsPage = ({ responsitivity }: Props) => {
     },
   })
 
+  const handleCoverClick = (e) => {
+    if (isPlaying) {
+      e.target.style.animationName = 'scale'
+      setTimeout(() => {
+        audio.play()
+        setIsPlaying(false)
+      }, 1100)
+    } else {
+      e.target.style.animationName = ''
+      audio.pause()
+      setIsPlaying(true)
+    }
+  }
+
   return (
     <>
       <MetaTags title="Songs" description="Songs page" />
       <div className="theme-background"></div>
-      {/* <img
+      <img
         src={trackFetch.data ? trackFetch.data.track.cover : PatternGreen}
         className={`background-image${responsitivity()} blurdark`}
         alt=""
-      /> */}
+      />
       <section className="margin-box h-[100vh]">
         {trackFetch.data ? (
           <>
@@ -56,11 +71,13 @@ const SongsPage = ({ responsitivity }: Props) => {
               src={trackFetch.data ? trackFetch.data.track.cover : ''}
               alt={`${trackFetch.data ? trackFetch.data.track.title : ''}`}
               className={`song-cover song-cover${responsitivity()}`}
+              onClickCapture={(e) => handleCoverClick(e)}
             />
             <h2 className={`song-date${responsitivity()}`}>
               {trackFetch.data.track.release_date}
             </h2>
             <p className={`song-description${responsitivity()}`}>
+              <br />
               {trackFetch.data.track.trackAudioFeatures ? (
                 <>
                   {trackFetch.data.track.trackAudioFeatures.acousticness}
@@ -72,8 +89,6 @@ const SongsPage = ({ responsitivity }: Props) => {
               ) : (
                 <></>
               )}
-              <br />
-              <button onClick={() => audio.play()}> Play </button>
             </p>
           </>
         ) : (

@@ -94,3 +94,19 @@ button, input[type="submit"], input[type="reset"] {
   background: linear-gradient(135deg ,var(--mid) 0% ,var(--dark) 100% );
 }
 
+.button2 {
+  background-color: var(--dark);
+  border-radius: var(--border-radius);
+  height: 4rem;
+  filter: drop-shadow(.2rem .2rem 0 var(--light)) ;
+  font-size: 2rem;
+  color: var(--mid);
+  font-family: var(--font-main);
+  transition: background-Color ease .2s, color ease .2s;
+  width: 100%;
+}
+.button2:hover {
+  background-color: var(--mid);
+  color: var(--dark);
+}
+
