@@ -108,7 +108,7 @@
 
  .background_image {
    transform: translateZ(-100px) scale(2.1);
-   filter: blur(1px) brightness(70%);
+   filter: blur(7px) brightness(70%);
  }
 
  .vgrid2 {
