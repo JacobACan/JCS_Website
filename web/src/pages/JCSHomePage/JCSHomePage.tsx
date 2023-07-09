@@ -24,7 +24,7 @@ const JcsHomePage = () => {
 
       <div className="paralax-wrapper">
         <section className="paralax-contents">
-          <img className="background_image" src={GreenStudio} alt="" />
+          <img className={`background_image`} src={GreenStudio} alt="" />
           <div className="background_break"></div>
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${responsitivity()}`}>
@@ -34,14 +34,14 @@ const JcsHomePage = () => {
               id="home-quick-description"
               className={`home-quick-description${responsitivity()}`}
             >
-              Developer • Producer • Singer
+              Developer • Producer • Artist
             </p>
             <div className="vgrid3 space-y-7">
               <button
                 id="home-button1"
                 className={`home-button${responsitivity()}`}
               >
-                Music
+                Latest Music
               </button>
               <button
                 id="home-button2"
@@ -53,7 +53,7 @@ const JcsHomePage = () => {
             </div>
           </div>
         </section>
-        <SongsPage isPhone={isPhone} />
+        <SongsPage responsitivity={responsitivity} isPhone={isPhone} />
       </div>
     </>
   )

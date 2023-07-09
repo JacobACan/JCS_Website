@@ -18,6 +18,10 @@ h1 {
   font-family: var(--font-main);
   color: var(--light);
 }
+h2 {
+  font-family: var(--font-main);
+  color: var(--light);
+}
 p {
   font-family: var(--font-main);
   color: var(--light);
@@ -60,7 +64,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 
 .blurdark {
-  filter: blur(2px) brightness(10%);
+  filter: blur(4px) brightness(50%);
 }
 
 .margin-box {
@@ -68,7 +72,25 @@ button, input[type="submit"], input[type="reset"] {
   left: var(--margin-sides);
   width: calc(100vw - (2 * var(--margin-sides)) );
   display: grid;
-  grid-template-columns: 16.25vw 16.25vw 16.25vw 16.25vw 16.25vw 16.25vw;
-  gap: .5vw;
+  --gap : 1vw;
+  --columns : 6;
+  --col-width : calc((100vw - (2* var(--margin-sides)) - (var(--columns) - 1) * var(--gap)) / var(--columns));
+  grid-template-columns: var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width);
+  grid-auto-rows: var(--col-width);
+  gap: var(--gap);
+}
+
+.background-image-phone {
+  position: fixed;
+  object-fit: contain;
+  height: 100vh;
+  left: -50vw;
+  overflow-x: hidden;
+}
+.theme-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(135deg ,var(--mid) 0% ,var(--dark) 100% );
 }
 
