@@ -17,12 +17,16 @@ const JcsHomePage = () => {
   const responsitivity = (): string => {
     return isPhone ? '-phone' : '-desktop'
   }
+  const scrollToLatestMusic = () => {
+    const paralaxWrapper = document.getElementById('paralax-wrapper') // We must use the paralax wrapper instead of window since the wrapper is being scrolled, not the window.
+    paralaxWrapper.scrollTo({ behavior: 'smooth', top: 1000 })
+  }
 
   return (
     <>
       <MetaTags title="JcsHome" description="JcsHome page" />
 
-      <div className="paralax-wrapper">
+      <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
           <img className={`background_image`} src={GreenStudio} alt="" />
           {/* <div className="image-frame"></div>
@@ -41,10 +45,7 @@ const JcsHomePage = () => {
               <button
                 id="home-button1"
                 className={`home-button${responsitivity()}`}
-                onClick={() => {
-                  console.log('scrolling')
-                  window.scrollTo({ behavior: 'smooth', top: 1000 })
-                }}
+                onClick={() => scrollToLatestMusic()}
               >
                 Latest Music
               </button>
