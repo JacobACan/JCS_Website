@@ -29,8 +29,8 @@ const JcsHomePage = () => {
       <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
           <img className={`background_image`} src={GreenStudio} alt="" />
-          <div className="image-frame"></div>
-          <div className="image-frame-fill"></div>
+          {/* <div className="image-frame"></div>
+          <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${responsitivity()}`}>
               Jacob Canedy
