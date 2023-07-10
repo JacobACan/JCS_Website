@@ -25,6 +25,7 @@ const SongsPage = () => {
         cover
         release_date
         preview
+        description
         trackAudioFeatures {
           acousticness
           danceability
@@ -91,25 +92,9 @@ const SongsPage = () => {
               {trackFetch.data.track.release_date}
             </h2>
             {trackFetch.data.track.trackAudioFeatures ? (
-              <ul className={`song-description${responsitivity()}`}>
-                <li>
-                  Acousticness :
-                  {trackFetch.data.track.trackAudioFeatures.acousticness}
-                </li>
-                <li>
-                  Danceability :
-                  {trackFetch.data.track.trackAudioFeatures.danceability}
-                </li>
-                <li>
-                  Energy : {trackFetch.data.track.trackAudioFeatures.energy}
-                </li>
-                {/* <li>
-                    {trackFetch.data.track.trackAudioFeatures.time_signature}
-                  </li> */}
-                <li>
-                  Valence : {trackFetch.data.track.trackAudioFeatures.valence}
-                </li>
-              </ul>
+              <p className={`song-description${responsitivity()}`}>
+                {trackFetch.data.track.description}
+              </p>
             ) : (
               <></>
             )}

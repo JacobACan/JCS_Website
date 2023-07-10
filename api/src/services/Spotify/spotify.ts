@@ -2,6 +2,8 @@ import type { QueryResolvers, Track, TrackAudioFeatures } from 'types/graphql'
 
 import { logger } from 'src/lib/logger'
 
+import { makeSpotifyTrackDescription } from '../LLM/gpt'
+
 let token
 export const track: QueryResolvers['track'] = async (input) => {
   return await getJacobsTrack(input.recency)
@@ -50,6 +52,8 @@ const getJacobsTrack = async (trackNumber): Promise<Track> => {
   trackDescriptionInfo['time_signature'] = trackAudioFeatures['time_signature']
   trackDescriptionInfo['valence'] = trackAudioFeatures['valence']
   trackInfo['trackAudioFeatures'] = trackDescriptionInfo
+
+  trackInfo['description'] = makeSpotifyTrackDescription(trackInfo)
 
   return trackInfo
 }

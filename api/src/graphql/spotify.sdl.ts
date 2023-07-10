@@ -5,6 +5,7 @@ export const schema = gql`
     preview: String
     cover: String
     release_date: String
+    description: String
     trackAudioFeatures: TrackAudioFeatures
   }
 

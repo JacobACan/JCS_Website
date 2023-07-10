@@ -63,8 +63,8 @@
   display: none;
 }
 .song-description-phone {
-  grid-area: 10 / 1 / 10 / 6;
-  width: inherit;
+  grid-area: 10 / 2 / 10 / 6;
+  position: relative;
   text-align: center;
 }
 .song-description-desktop {
