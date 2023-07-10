@@ -77,10 +77,11 @@ button, input[type="submit"], input[type="reset"] {
 .background-image-phone {
   position: fixed;
   object-fit: cover;
-  height: 100vh;
+  object-position: 0 0;
   width: 100vw;
-  object-position: 0 -50vh;
+  height: 100vh;
   overflow-x: hidden;
+  left: -10vw;
 }
 .background-image-desktop {
   position: fixed;

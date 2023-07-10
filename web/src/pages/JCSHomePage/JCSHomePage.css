@@ -128,12 +128,12 @@
     -webkit-box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    border: 28px solid var(--dark);
+    border: 20px solid var(--dark);
     background: none;
     position: fixed;
     border-radius: 50px;
     pointer-events: none;
-    filter: blur(3px);
+    filter: blur(1px);
  }
  .image-frame-fill {
   box-sizing: border-box;
@@ -141,7 +141,7 @@
     -webkit-box-sizing: border-box;
     width: 100vw;
     height: 100vh;
-    border: 25px solid var(--dark);
+    border: 19px solid var(--dark);
     background: none;
     position: fixed;
     pointer-events: none;
