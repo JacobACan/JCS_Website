@@ -2,12 +2,13 @@ import { useState } from 'react'
 
 import { MetaTags } from '@redwoodjs/web'
 
+import { phoneWidth } from 'src/Routes'
+
 import SongsPage from '../SongsPage/SongsPage'
 
 import GreenStudio from './media/GreenStudio.png'
 
 const JcsHomePage = () => {
-  const phoneWidth = 700
   const [isPhone, setIsPhone] = useState(window.innerWidth < phoneWidth)
   window.addEventListener('resize', (e: any) => {
     e.target && e.target.innerWidth < phoneWidth
@@ -59,7 +60,7 @@ const JcsHomePage = () => {
             </div>
           </div>
         </section>
-        <SongsPage responsitivity={responsitivity} isPhone={isPhone} />
+        <SongsPage />
       </div>
     </>
   )

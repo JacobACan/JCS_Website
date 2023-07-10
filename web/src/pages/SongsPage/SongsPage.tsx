@@ -2,14 +2,20 @@ import { useState } from 'react'
 
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
+import { phoneWidth } from 'src/Routes'
+
 import PatternGreen from './media/PatternGreen.png'
 
-interface Props {
-  isPhone: boolean
-  responsitivity: () => string
-}
-
-const SongsPage = ({ responsitivity }: Props) => {
+const SongsPage = () => {
+  const [isPhone, setIsPhone] = useState(window.innerWidth < phoneWidth)
+  window.addEventListener('resize', (e: any) => {
+    e.target && e.target.innerWidth < phoneWidth
+      ? setIsPhone(true)
+      : setIsPhone(false)
+  })
+  const responsitivity = (): string => {
+    return isPhone ? '-phone' : '-desktop'
+  }
   const [audio, setAudio] = useState(new Audio())
   const [isPlaying, setIsPlaying] = useState(false)
   const TRACK_QUERY = gql`

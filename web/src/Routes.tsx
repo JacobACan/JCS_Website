@@ -9,6 +9,8 @@
 
 import { Router, Route } from '@redwoodjs/router'
 
+export const phoneWidth = 700
+
 const Routes = () => {
   return (
     <Router>
