@@ -32,8 +32,6 @@ const SongsPage = ({ responsitivity }: Props) => {
   const trackFetch = useQuery(TRACK_QUERY, {
     variables: { recency: 1 },
     onCompleted: async (data) => {
-      console.log('#Tacks')
-      console.log(`${data.track.preview}`)
       setAudio(new Audio(`${data.track.preview}`))
     },
   })
@@ -41,13 +39,13 @@ const SongsPage = ({ responsitivity }: Props) => {
   const handleCoverClick = (e) => {
     const background = document.getElementById('songs-page-background')
     console.log(background)
-    if (isPlaying) {
+    if (!isPlaying) {
       e.target.style.animationName = 'scale-down'
       background.style.animationName = 'scroll-right'
       setTimeout(() => {
         audio.volume = 0.2
         audio.play()
-        setIsPlaying(false)
+        setIsPlaying(true)
       }, 100)
       setTimeout(() => {
         background.style.animationName = ''
@@ -55,7 +53,7 @@ const SongsPage = ({ responsitivity }: Props) => {
     } else {
       e.target.style.animationName = 'scale-up'
       audio.pause()
-      setIsPlaying(true)
+      setIsPlaying(false)
     }
   }
 
