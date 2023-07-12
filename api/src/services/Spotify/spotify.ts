@@ -1,8 +1,9 @@
 import type { QueryResolvers, Track, TrackAudioFeatures } from 'types/graphql'
 
+import { db } from 'src/lib/db'
 import { logger } from 'src/lib/logger'
 
-import { makeSpotifyTrackDescription } from '../LLM/gpt'
+import { generateSpotifyTrackDescription } from '../LLM/gpt'
 
 let token
 export const track: QueryResolvers['track'] = async (input) => {
@@ -53,7 +54,7 @@ const getJacobsTrack = async (trackNumber): Promise<Track> => {
   trackDescriptionInfo['valence'] = trackAudioFeatures['valence']
   trackInfo['trackAudioFeatures'] = trackDescriptionInfo
 
-  trackInfo['description'] = await makeSpotifyTrackDescription(trackInfo)
+  trackInfo['description'] = await getSpotifyTrackDescription(trackInfo)
 
   return trackInfo
 }
@@ -101,4 +102,33 @@ const getTrackAudioFeatures = async (trackId) => {
       return jsonRes
     })
     .catch((e) => console.error(e))
+}
+
+const getSpotifyTrackDescription = async (
+  trackInfo: Track
+): Promise<string> => {
+  let description: string
+
+  const track = await db.track.findFirst({
+    where: { trackId: { equals: trackInfo.trackId } },
+    select: { description: true },
+  })
+  if (!track) {
+    description = await generateSpotifyTrackDescription(trackInfo)
+    await db.track.create({
+      data: { trackId: trackInfo.trackId, description: description },
+    })
+  } else {
+    if (!track.description) {
+      description = await generateSpotifyTrackDescription(trackInfo)
+      await db.track.update({
+        data: { description: description },
+        where: { trackId: trackInfo.trackId },
+      })
+    } else {
+      description = track.description
+    }
+  }
+
+  return description
 }
