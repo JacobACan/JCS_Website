@@ -53,7 +53,7 @@ const getJacobsTrack = async (trackNumber): Promise<Track> => {
   trackDescriptionInfo['valence'] = trackAudioFeatures['valence']
   trackInfo['trackAudioFeatures'] = trackDescriptionInfo
 
-  trackInfo['description'] = makeSpotifyTrackDescription(trackInfo)
+  trackInfo['description'] = await makeSpotifyTrackDescription(trackInfo)
 
   return trackInfo
 }
