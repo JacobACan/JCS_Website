@@ -9,6 +9,9 @@
  @import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Bigshot+One&family=Caveat+Brush&family=IBM+Plex+Mono:wght@700&family=Water+Brush&display=swap');
 
  @import 'style.css';
+
+ @import 'components/Arrow/Arrow.css';
+
  @import 'pages/JCSHomePage/JCSHomePage.css';
  @import 'pages/SongsPage/SongsPage.css';
 

@@ -74,6 +74,20 @@
   mix-blend-mode: difference;
 
 }
+.right-arrow-song-placement-phone {
+  grid-area: 5 / 6 / 5 / 6;
+  margin-left: 90%;
+}
+.right-arrow-song-placement-desktop {
+  grid-area: 3 / 6 / 3 / 6;
+}
+.left-arrow-song-placement-phone {
+  grid-area: 5 / 1 / 5 / 1;
+  margin-left: -90%;
+}
+.left-arrow-song-placement-desktop {
+  grid-area: 3 / 1 / 3 / 1;
+}
 
 @keyframes scale-down {
   0% {

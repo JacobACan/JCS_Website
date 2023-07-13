@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
+import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
 import { phoneWidth } from 'src/Routes'
 
 import PatternGreen from './media/PatternGreen.png'
@@ -17,7 +18,25 @@ const SongsPage = () => {
     return isPhone ? '-phone' : '-desktop'
   }
   const [audio, setAudio] = useState(new Audio())
+  audio.addEventListener('pause', () => {
+    resetCoverAnimation()
+  })
+  audio.addEventListener('ended', () => {
+    resetCoverAnimation()
+  })
+  audio.addEventListener('play', () => {
+    startCoverAnimation()
+  })
+  const resetCoverAnimation = () => {
+    const cover = document.getElementById('songs-page-song-cover')
+    cover.style.animationName = 'scale-up'
+  }
+  const startCoverAnimation = () => {
+    const cover = document.getElementById('songs-page-song-cover')
+    cover.style.animationName = 'scale-down'
+  }
   const [isPlaying, setIsPlaying] = useState(false)
+  const [songRecency, setSongRecency] = useState(1)
   const TRACK_QUERY = gql`
     query Track($recency: Int!) {
       track(recency: $recency) {
@@ -36,40 +55,46 @@ const SongsPage = () => {
       }
     }
   `
-  const trackFetch = useQuery(TRACK_QUERY, {
-    variables: { recency: 1 },
+  const {
+    data: trackData,
+    loading,
+    refetch,
+  } = useQuery(TRACK_QUERY, {
+    variables: { recency: songRecency },
     onCompleted: async (data) => {
       setAudio(new Audio(`${data.track.preview}`))
     },
   })
 
-  const handleCoverClick = (e) => {
+  const handleCoverClick = () => {
     const background = document.getElementById('songs-page-background')
-    console.log(background)
-    if (!isPlaying) {
-      e.target.style.animationName = 'scale-down'
-      background.style.animationName = 'scroll-right'
-      setTimeout(() => {
+    if (!loading) {
+      if (!isPlaying) {
+        background.style.animationName = 'scroll-right'
         audio.volume = 0.2
         audio.play()
         setIsPlaying(true)
-      }, 100)
-      setTimeout(() => {
-        background.style.animationName = ''
-      }, 60000)
-    } else {
-      e.target.style.animationName = 'scale-up'
-      audio.pause()
-      setIsPlaying(false)
+        setTimeout(() => {
+          background.style.animationName = ''
+        }, 60000)
+      } else {
+        audio.pause()
+        setIsPlaying(false)
+      }
     }
   }
+
+  useEffect(() => {
+    audio.pause()
+  }, [trackData])
 
   return (
     <>
       <MetaTags title="Songs" description="Songs page" />
       <div className="theme-background"></div>
+
       <img
-        src={trackFetch.data ? trackFetch.data.track.cover : PatternGreen}
+        src={trackData ? trackData.track.cover : PatternGreen}
         className={`background-image${responsitivity()} blurdark`}
         id="songs-page-background"
         alt=""
@@ -77,27 +102,50 @@ const SongsPage = () => {
       <section className="margin-box mt-[10vh] h-[90vh]">
         <h1 id="songs-page-title">Latest Music</h1>
 
-        {trackFetch.data ? (
+        {trackData ? (
           <>
             <h1 id="song-title" className={`song-title${responsitivity()}`}>
-              {trackFetch.data.track.title}
+              {trackData.track.title}
             </h1>
             <img
-              src={trackFetch.data ? trackFetch.data.track.cover : ''}
-              alt={`${trackFetch.data ? trackFetch.data.track.title : ''}`}
+              src={trackData ? trackData.track.cover : ''}
+              alt={`${trackData ? trackData.track.title : ''}`}
               className={`song-cover song-cover${responsitivity()}`}
-              onClickCapture={(e) => handleCoverClick(e)}
+              onClickCapture={() => handleCoverClick()}
+              id="songs-page-song-cover"
             />
             <h2 className={`song-date${responsitivity()}`}>
-              {trackFetch.data.track.release_date}
+              {trackData.track.release_date}
             </h2>
-            {trackFetch.data.track.trackAudioFeatures ? (
+            {trackData.track.trackAudioFeatures ? (
               <p className={`song-description${responsitivity()}`}>
-                {trackFetch.data.track.description}
+                {trackData.track.description}
               </p>
             ) : (
               <></>
             )}
+            <div className={`right-arrow-song-placement${responsitivity()}`}>
+              <Arrow
+                type={ArrowType.Right}
+                handleClick={() => {
+                  songRecency < 10
+                    ? setSongRecency(songRecency + 1)
+                    : setSongRecency(1)
+                  refetch()
+                }}
+              />
+            </div>
+            <div className={`left-arrow-song-placement${responsitivity()}`}>
+              <Arrow
+                type={ArrowType.Left}
+                handleClick={() => {
+                  songRecency > 0
+                    ? setSongRecency(songRecency - 1)
+                    : setSongRecency(10)
+                  refetch()
+                }}
+              />
+            </div>
           </>
         ) : (
           ''
