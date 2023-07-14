@@ -129,6 +129,6 @@ const getSpotifyTrackDescription = async (
       description = track.description
     }
   }
-
+  logger.debug({}, `Made Description : ${description}`)
   return description
 }

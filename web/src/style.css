@@ -92,9 +92,15 @@ button, input[type="submit"], input[type="reset"] {
   overflow-x: hidden;
   left: -10vw;
 }
-.theme-background {
+.theme-background-desktop {
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
+}
+.theme-background-phone {
+  width: 100vw;
+  height: 150vh;
   position: fixed;
   background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
 }

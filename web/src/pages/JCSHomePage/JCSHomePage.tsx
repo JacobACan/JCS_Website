@@ -10,6 +10,7 @@ import GreenStudio from './media/GreenStudio.png'
 
 const JcsHomePage = () => {
   const [isPhone, setIsPhone] = useState(window.innerWidth < phoneWidth)
+
   window.addEventListener('resize', (e: any) => {
     e.target && e.target.innerWidth < phoneWidth
       ? setIsPhone(true)
@@ -20,7 +21,11 @@ const JcsHomePage = () => {
   }
   const scrollToLatestMusic = () => {
     const paralaxWrapper = document.getElementById('paralax-wrapper') // We must use the paralax wrapper instead of window since the wrapper is being scrolled, not the window.
-    paralaxWrapper.scrollTo({ behavior: 'smooth', top: 1000 })
+    const songsPagePosition = document.getElementById('songs-page-position')
+    paralaxWrapper.scrollTo({
+      behavior: 'smooth',
+      top: songsPagePosition ? songsPagePosition.offsetTop : 0,
+    })
   }
 
   return (

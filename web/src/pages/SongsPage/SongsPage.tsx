@@ -91,66 +91,67 @@ const SongsPage = () => {
   return (
     <>
       <MetaTags title="Songs" description="Songs page" />
-      <div className="theme-background"></div>
+      <div id="songs-page-position"></div>
+      <div className={`theme-background${responsitivity()}`}>
+        <img
+          src={trackData ? trackData.track.cover : PatternGreen}
+          className={`background-image${responsitivity()} blurdark`}
+          id="songs-page-background"
+          alt=""
+        />
+        <section className="margin-box mt-[10vh] h-[90vh]">
+          <h1 id="songs-page-title">Latest Music</h1>
 
-      <img
-        src={trackData ? trackData.track.cover : PatternGreen}
-        className={`background-image${responsitivity()} blurdark`}
-        id="songs-page-background"
-        alt=""
-      />
-      <section className="margin-box mt-[10vh] h-[90vh]">
-        <h1 id="songs-page-title">Latest Music</h1>
-
-        {trackData ? (
-          <>
-            <h1 id="song-title" className={`song-title${responsitivity()}`}>
-              {trackData.track.title}
-            </h1>
-            <img
-              src={trackData ? trackData.track.cover : ''}
-              alt={`${trackData ? trackData.track.title : ''}`}
-              className={`song-cover song-cover${responsitivity()}`}
-              onClickCapture={() => handleCoverClick()}
-              id="songs-page-song-cover"
-            />
-            <h2 className={`song-date${responsitivity()}`}>
-              {trackData.track.release_date}
-            </h2>
-            {trackData.track.trackAudioFeatures ? (
-              <p className={`song-description${responsitivity()}`}>
-                {trackData.track.description}
-              </p>
-            ) : (
-              <></>
-            )}
-            <div className={`right-arrow-song-placement${responsitivity()}`}>
-              <Arrow
-                type={ArrowType.Right}
-                handleClick={() => {
-                  songRecency < 10
-                    ? setSongRecency(songRecency + 1)
-                    : setSongRecency(1)
-                  refetch()
-                }}
+          {trackData ? (
+            <>
+              <h1 id="song-title" className={`song-title${responsitivity()}`}>
+                {trackData.track.title}
+              </h1>
+              <img
+                src={trackData ? trackData.track.cover : ''}
+                alt={`${trackData ? trackData.track.title : ''}`}
+                className={`song-cover song-cover${responsitivity()}`}
+                onClickCapture={() => handleCoverClick()}
+                id="songs-page-song-cover"
               />
-            </div>
-            <div className={`left-arrow-song-placement${responsitivity()}`}>
-              <Arrow
-                type={ArrowType.Left}
-                handleClick={() => {
-                  songRecency > 0
-                    ? setSongRecency(songRecency - 1)
-                    : setSongRecency(10)
-                  refetch()
-                }}
-              />
-            </div>
-          </>
-        ) : (
-          ''
-        )}
-      </section>
+              <h2 className={`song-date${responsitivity()}`}>
+                {trackData.track.release_date}
+              </h2>
+              {trackData.track.trackAudioFeatures ? (
+                <p className={`song-description${responsitivity()}`}>
+                  {trackData.track.description}
+                </p>
+              ) : (
+                <></>
+              )}
+              <div className={`right-arrow-song-placement${responsitivity()}`}>
+                <Arrow
+                  type={ArrowType.Right}
+                  handleClick={() => {
+                    songRecency < 10
+                      ? setSongRecency(songRecency + 1)
+                      : setSongRecency(1)
+                    refetch()
+                  }}
+                />
+              </div>
+              <div className={`left-arrow-song-placement${responsitivity()}`}>
+                <Arrow
+                  type={ArrowType.Left}
+                  handleClick={() => {
+                    songRecency > 0
+                      ? setSongRecency(songRecency - 1)
+                      : setSongRecency(10)
+                    refetch()
+                  }}
+                />
+              </div>
+            </>
+          ) : (
+            ''
+          )}
+        </section>
+      </div>
     </>
   )
 }
