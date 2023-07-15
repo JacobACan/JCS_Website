@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 
+import { BounceLoader } from 'react-spinners'
+
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
 import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
@@ -20,12 +22,15 @@ const SongsPage = () => {
   const [audio, setAudio] = useState(new Audio())
   audio.addEventListener('pause', () => {
     resetCoverAnimation()
+    setIsPlaying(false)
   })
   audio.addEventListener('ended', () => {
     resetCoverAnimation()
+    setIsPlaying(false)
   })
   audio.addEventListener('play', () => {
     startCoverAnimation()
+    setIsPlaying(true)
   })
   const resetCoverAnimation = () => {
     const cover = document.getElementById('songs-page-song-cover')
@@ -114,6 +119,13 @@ const SongsPage = () => {
                 onClickCapture={() => handleCoverClick()}
                 id="songs-page-song-cover"
               />
+              {loading ? (
+                <div className={`song-cover-loader${responsitivity()}`}>
+                  <BounceLoader size={100} />
+                </div>
+              ) : (
+                <></>
+              )}
               <h2 className={`song-date${responsitivity()}`}>
                 {trackData.track.release_date}
               </h2>
@@ -148,7 +160,9 @@ const SongsPage = () => {
               </div>
             </>
           ) : (
-            ''
+            <div className={`song-cover-loader${responsitivity()}`}>
+              <BounceLoader size={100} />
+            </div>
           )}
         </section>
       </div>

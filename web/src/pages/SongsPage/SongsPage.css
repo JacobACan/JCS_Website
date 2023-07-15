@@ -35,6 +35,24 @@
   cursor: pointer;
   filter: brightness(120%);
 }
+
+.song-cover-loader-desktop {
+  position: relative;
+  grid-area: 2 / 2 / 4 / 4;
+  width: 100%;
+  height: 100%;
+  text-align: -webkit-center;
+  padding-top: 35%;
+}
+.song-cover-loader-phone {
+  grid-area: 3 / 1 / 3 / 6;
+  width: inherit;
+  height: inherit;
+  text-align: -webkit-center;
+  padding-top: 45%;
+}
+
+
 .song-title-phone {
   grid-area: 2 / 1 / 2 / -1;
   text-align: center;
