@@ -1,124 +1,123 @@
 
 :root {
-  --light-pink : rgba(230, 157, 165, 253);
-  --pink : rgba(204, 153, 210, 212);
-  --light-blue : rgba(148, 210, 251, 212);
-  --dark-blue : rgba(43, 112, 148, 212);
-  --gray : rgba(138, 146, 171, 212);
-  --white : rgba(238, 229, 219, 212);
-  --black : rgba(0, 0, 0, 212);
+  --border-radius : 8px;
+  --dark : rgb(31, 31, 31);
+  --mid : rgb(42, 102, 42);
+  --light : rgb(255, 245, 225);
+  --font-main : 'Bigshot One', cursive;
+  --margin-sides : 11vw;
+  --page-title-font-size : 8vw
 }
 
 body {
-  color: var(--white);
-  background-color: var(--dark-blue);
-  font-family: 'Bigshot One', cursive;
-  letter-spacing: 1rem;
+  background: linear-gradient(135deg ,var(--mid) 0% ,var(--dark) 100% );
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  font-size: 5rem;
+  font-family: var(--font-main);
+  color: var(--light);
+}
+h2 {
+  font-family: var(--font-main);
+  color: var(--light);
+}
+p {
+  font-family: var(--font-main);
+  color: var(--light);
+}
+ul {
+  font-family: var(--font-main);
+  color: var(--light);
+}
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
 }
 
-::-webkit-scrollbar {
-  width: 0px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: var(--dark-blue);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--white);
-  border-radius: 3px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background:var(--light-pink);
-}
 
 #redwood-app {
   padding: 0;
   margin: 0;
 }
 
-.paralax-wrapper {
- height: 100vh;
- overflow-y: auto;
- overflow-x: hidden;
- perspective: 100px;
- margin: 0;
- padding: 0;
+/* Remove Button Display */
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
-
-
-.paralax-contents {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  transform-style: preserve-3d;
-  z-index: -1;
+.blurdark {
+  filter: blur(128px) brightness(50%);
+  opacity: 50%;
 }
 
-.background_logo, .background_image   {
+.margin-box {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  left: var(--margin-sides);
+  width: calc(100vw - (2 * var(--margin-sides)) );
+  display: grid;
+  --gap : 1vw;
+  --columns : 6;
+  --col-width : calc((100vw - (2* var(--margin-sides)) - (var(--columns) - 1) * var(--gap)) / var(--columns));
+  grid-template-columns: var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width) var(--col-width);
+  grid-auto-rows: var(--col-width);
+
+  gap: var(--gap);
+
+}
+
+.background-image-phone {
+  position: fixed;
   object-fit: cover;
-  z-index: -1;
-}
-
-.background_break{
-  position: absolute;
- background-color: var(--black);
- width: 100vw;
- height: 100vh;
-  z-index: -1;
-  transform: translateZ(-50px) scale(2) translateY(0);
-  opacity: 40%;
-}
-
-.background_logo {
-  transform: translateZ(-70px) scale(.7) translateY(-20vh) rotate3d(1, .2, 0, 1.5deg);
-}
-
-.background_image {
-  transform: translateZ(-100px) scale(2.1);
-}
-
-
-.latest_release {
- text-shadow: 0px 0px 5px var(--black);
- transform: translateY(0vh) scale(.4);
- color: var(--light-blue);
-}
-.section_title {
-  text-shadow: 0px 0px 2rem var(--black);
-  font-size: 10vh;
-  margin-left: 2vw;
- transform: translateY(-7vh) ;
-}
-
-
-.page_section_black {
-  color: var(--pink);
-  justify-content: center;
-  align-items: center;
-  margin-top: -20px;
-  padding: 0;
+  object-position: 0 0;
+  width: 100vw;
   height: 100vh;
-  background-color: var(--black);
+  overflow-x: hidden;
+  left: -10vw;
+}
+.background-image-desktop {
+  position: fixed;
+  object-fit: cover;
+  object-position: 0 -50vh;
+  width: 150vw;
+  height: 100vh;
+  overflow-x: hidden;
+  left: -10vw;
+}
+.theme-background-desktop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
+}
+.theme-background-phone {
+  width: 100vw;
+  height: 150vh;
+  position: fixed;
+  background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
 }
 
-@import url('components/Song/song.css');
-@import url('components/Songs/songs.css');
-
+.button-dark {
+  background-color: var(--dark);
+  border-radius: var(--border-radius);
+  height: 4rem;
+  filter: drop-shadow(.2rem .2rem 0 var(--light)) ;
+  font-size: 2rem;
+  color: var(--mid);
+  font-family: var(--font-main);
+  transition: background-Color ease .2s, color ease .2s;
+  width: 100%;
+}
+.button-dark:hover {
+  background-color: var(--mid);
+  color: var(--dark);
+}
 

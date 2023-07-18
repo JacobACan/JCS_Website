@@ -1,0 +1,22 @@
+.arrow {
+ width: 4rem;
+ height: 4rem;
+ filter: hue-rotate(100);
+ transform: scale(2);
+ opacity: 50%;
+}
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow-down {
+  transform: rotateZ(90deg);
+}
+.arrow-left {
+  transform: rotateZ(180deg);
+}
+.arrow-up {
+  transform: rotateZ(270deg);
+}
+.arrow-right {
+}

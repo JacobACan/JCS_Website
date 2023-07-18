@@ -8061,6 +8061,7 @@ __metadata:
   dependencies:
     "@redwoodjs/api": 5.3.0
     "@redwoodjs/graphql-server": 5.3.0
+    openai: ^3.3.0
   languageName: unknown
   linkType: soft
 
@@ -8568,6 +8569,15 @@ __metadata:
   version: 4.7.2
   resolution: "axe-core@npm:4.7.2"
   checksum: 8dfc61f038fbd9623ae8a264c8a475d887113a027fb440a2b377b82ffd300e71d1a0bcf042ff13b517a8d548b34c44b4159eff693725c5d7cde240d0aa68feac
+  languageName: node
+  linkType: hard
+
+"axios@npm:^0.26.0":
+  version: 0.26.1
+  resolution: "axios@npm:0.26.1"
+  dependencies:
+    follow-redirects: ^1.14.8
+  checksum: 77ad7f1e6ca04fcd3fa8af1795b09d8b7c005b71a31f28d99ba40cda0bdcc12a4627801d7fac5efa62b9f667a8402bd54c669039694373bc8d44f6be611f785c
   languageName: node
   linkType: hard
 
@@ -13261,7 +13271,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.0.0":
+"follow-redirects@npm:^1.0.0, follow-redirects@npm:^1.14.8":
   version: 1.15.2
   resolution: "follow-redirects@npm:1.15.2"
   peerDependenciesMeta:
@@ -18641,6 +18651,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"openai@npm:^3.3.0":
+  version: 3.3.0
+  resolution: "openai@npm:3.3.0"
+  dependencies:
+    axios: ^0.26.0
+    form-data: ^4.0.0
+  checksum: 3f4b29d21c042e140931d17cf1a23761f5e5ad23754d43da0c3611a3fb10e9ef00fdb076856c3f2af391ad29405b3b06d6c878f97f7a1e7981de0ae79eb1785e
+  languageName: node
+  linkType: hard
+
 "opener@npm:^1.5.2":
   version: 1.5.2
   resolution: "opener@npm:1.5.2"
@@ -20648,6 +20668,16 @@ __metadata:
     shallowequal: ^1.1.0
     throttle-debounce: ^3.0.1
   checksum: e6b336bbc1e9de78de5c7177afd398f6ea14c4284af698475f08d34389e9307cbc36c0125a61b158e026f182ae4dd17b13c28683bbc1a371792bccd1e51cccff
+  languageName: node
+  linkType: hard
+
+"react-spinners@npm:^0.13.8":
+  version: 0.13.8
+  resolution: "react-spinners@npm:0.13.8"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 59a030ece288f045a443e0b720c94636fc00667bcb8cd5a36ed8342cc2bc52a98106a676875551b3389ae5943bd7c4d4aa2ede0fb914bbde4322211f0f0120a8
   languageName: node
   linkType: hard
 
@@ -24452,6 +24482,7 @@ __metadata:
     prop-types: 15.8.1
     react: 18.2.0
     react-dom: 18.2.0
+    react-spinners: ^0.13.8
     tailwindcss: ^3.3.2
   languageName: unknown
   linkType: soft
