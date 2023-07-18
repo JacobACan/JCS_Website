@@ -55,13 +55,13 @@ const JcsHomePage = () => {
               >
                 Latest Music
               </button>
-              <button
+              {/* <button
                 id="home-button2"
                 className={`home-button${responsitivity()}`}
               >
                 {' '}
                 Products
-              </button>
+              </button> */}
             </div>
           </div>
         </section>

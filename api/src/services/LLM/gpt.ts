@@ -13,9 +13,9 @@ export const generateSpotifyTrackDescription = async (
   trackInfo: Track
 ): Promise<string> => {
   const exampleTrackDescription =
-    'Emerge from the blues of 2020 with this mellow lofi piece that blossoms like a flower - from melancholy to enlightening hopefulness. American producer Jacob Canedy brings warmth and assurance for a brighter future.  The first single "Left it all out in the open" envelops captivating guitars and smooth beats - a sound theyve proven to be dear to theyre audience.'
+    'Emerge from the blues of 2020 with this piece that blossoms like a flower. American producer Jacob Canedy brings warmth and assurance for a brighter future.  The first single "Left it all out in the open" envelops captivating guitars and smooth beats - a sound theyve proven to be dear to theyre audience.'
 
-  const prompt = `Write a paragraph long Spotify track description for solo artist Jacob Canedy like the one shown here : (${exampleTrackDescription}), but based on the track ${
+  const prompt = `Write a 3 sentence long Spotify track description for solo artist Jacob Canedy like the one shown here : (${exampleTrackDescription}), but based on the track ${
     trackInfo.title
   }.
   The description should incorporate these track audio features (${JSON.stringify(

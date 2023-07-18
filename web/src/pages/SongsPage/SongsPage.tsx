@@ -140,7 +140,7 @@ const SongsPage = () => {
                 <Arrow
                   type={ArrowType.Right}
                   handleClick={() => {
-                    songRecency < 10
+                    songRecency < 5
                       ? setSongRecency(songRecency + 1)
                       : setSongRecency(1)
                     refetch()
@@ -153,7 +153,7 @@ const SongsPage = () => {
                   handleClick={() => {
                     songRecency > 0
                       ? setSongRecency(songRecency - 1)
-                      : setSongRecency(10)
+                      : setSongRecency(5)
                     refetch()
                   }}
                 />

@@ -95,17 +95,16 @@
   font-size: 1vw;
 }
 .right-arrow-song-placement-phone {
-  grid-area: 5 / 6 / 5 / 6;
-  margin-left: 90%;
-  margin-top: 3vh;
+  grid-area: 5 / 1 / 5 / -1;
+  margin-top: 3.4vh;
+  text-align: right;
 }
 .right-arrow-song-placement-desktop {
   grid-area: 3 / 6 / 3 / 6;
   margin-top: -5vh;
 }
 .left-arrow-song-placement-phone {
-  grid-area: 5 / 1 / 5 / 1;
-  margin-left: -101%;
+  grid-area: 5 / 1 / 5 / -1;
   margin-top: 3vh;
 }
 .left-arrow-song-placement-desktop {
