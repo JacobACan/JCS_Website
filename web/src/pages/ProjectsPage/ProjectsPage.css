@@ -1,0 +1,42 @@
+
+#projects-page-title {
+  grid-area: 1 / 1 / 1 / -1;
+  font-size: var(--page-title-font-size);
+  text-align: center;
+  margin: 0;
+  filter: drop-shadow(.2rem .2rem 0var(--dark))  ;
+  mix-blend-mode: difference;
+  z-index: 1;
+  margin-top: -1rem;
+}
+
+.project-description-phone {
+  grid-area: 6 / 1 / 6 / 7;
+  position: relative;
+  text-align: center;
+  font-size: 1.5vh;
+  /* display: none; */
+}
+.project-description-desktop {
+  grid-area: 2 / 4 / 4 / 6;
+  position: relative;
+  text-align: left;
+  mix-blend-mode: difference;
+  font-size: 1vw;
+}
+
+.project-title-phone {
+  grid-area: 2 / 1 / 2 / -1;
+  text-align: center;
+  align-self: end;
+  margin: 0;
+}
+.project-title-desktop {
+  grid-area: 1 / 2 / 1 / 4;
+  position: relative;
+  text-align: center;
+  align-self: end;
+  margin: 0;
+  z-index: 1;
+  mix-blend-mode: difference;
+}

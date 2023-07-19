@@ -5,20 +5,13 @@ import { BounceLoader } from 'react-spinners'
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
 import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
-import { phoneWidth } from 'src/Routes'
+import { Responsitivity } from 'src/services/responsitivity'
 
 import PatternGreen from './media/PatternGreen.png'
 
 const SongsPage = () => {
-  const [isPhone, setIsPhone] = useState(window.innerWidth < phoneWidth)
-  window.addEventListener('resize', (e: any) => {
-    e.target && e.target.innerWidth < phoneWidth
-      ? setIsPhone(true)
-      : setIsPhone(false)
-  })
-  const responsitivity = (): string => {
-    return isPhone ? '-phone' : '-desktop'
-  }
+  const responsitivity = new Responsitivity(useState())
+
   const [audio, setAudio] = useState(new Audio())
   audio.addEventListener('pause', () => {
     resetCoverAnimation()
@@ -94,13 +87,13 @@ const SongsPage = () => {
   }, [trackData])
 
   return (
-    <>
+    <section className="page-section">
       <MetaTags title="Songs" description="Songs page" />
       <div id="songs-page-position"></div>
-      <div className={`theme-background${responsitivity()}`}>
+      <div className={`theme-background${responsitivity.responsitivity()}`}>
         <img
           src={trackData ? trackData.track.cover : PatternGreen}
-          className={`background-image${responsitivity()} blurdark`}
+          className={`background-image${responsitivity.responsitivity()} blurdark`}
           id="songs-page-background"
           alt=""
         />
@@ -109,34 +102,43 @@ const SongsPage = () => {
 
           {trackData ? (
             <>
-              <h1 id="song-title" className={`song-title${responsitivity()}`}>
+              <h1
+                id="song-title"
+                className={`song-title${responsitivity.responsitivity()}`}
+              >
                 {trackData.track.title}
               </h1>
               <img
                 src={trackData ? trackData.track.cover : ''}
                 alt={`${trackData ? trackData.track.title : ''}`}
-                className={`song-cover song-cover${responsitivity()}`}
+                className={`song-cover song-cover${responsitivity.responsitivity()}`}
                 onClickCapture={() => handleCoverClick()}
                 id="songs-page-song-cover"
               />
               {loading ? (
-                <div className={`song-cover-loader${responsitivity()}`}>
+                <div
+                  className={`song-cover-loader${responsitivity.responsitivity()}`}
+                >
                   <BounceLoader size={100} />
                 </div>
               ) : (
                 <></>
               )}
-              <h2 className={`song-date${responsitivity()}`}>
+              <h2 className={`song-date${responsitivity.responsitivity()}`}>
                 {trackData.track.release_date}
               </h2>
               {trackData.track.trackAudioFeatures ? (
-                <p className={`song-description${responsitivity()}`}>
+                <p
+                  className={`song-description${responsitivity.responsitivity()}`}
+                >
                   {trackData.track.description}
                 </p>
               ) : (
                 <></>
               )}
-              <div className={`right-arrow-song-placement${responsitivity()}`}>
+              <div
+                className={`right-arrow-song-placement${responsitivity.responsitivity()}`}
+              >
                 <Arrow
                   type={ArrowType.Right}
                   handleClick={() => {
@@ -147,7 +149,9 @@ const SongsPage = () => {
                   }}
                 />
               </div>
-              <div className={`left-arrow-song-placement${responsitivity()}`}>
+              <div
+                className={`left-arrow-song-placement${responsitivity.responsitivity()}`}
+              >
                 <Arrow
                   type={ArrowType.Left}
                   handleClick={() => {
@@ -160,13 +164,15 @@ const SongsPage = () => {
               </div>
             </>
           ) : (
-            <div className={`song-cover-loader${responsitivity()}`}>
+            <div
+              className={`song-cover-loader${responsitivity.responsitivity()}`}
+            >
               <BounceLoader size={100} />
             </div>
           )}
         </section>
       </div>
-    </>
+    </section>
   )
 }
 
