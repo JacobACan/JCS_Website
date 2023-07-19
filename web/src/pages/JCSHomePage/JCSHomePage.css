@@ -1,10 +1,10 @@
 #home-title {
-  filter: drop-shadow(.4rem .4rem 0 var(--mid)) drop-shadow(.8rem .8rem 0 var(--dark)) ;
+  /* filter: drop-shadow(.4rem .4rem 0 var(--mid)) drop-shadow(.8rem .8rem 0 var(--dark)) ; */
   text-align: center;
   margin: 0;
 }
 .home-title-desktop {
-  font-size: 10rem;
+  font-size: 13rem;
   letter-spacing: .8rem;
   transform: translateZ(-60px);
 }

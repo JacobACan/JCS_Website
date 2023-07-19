@@ -13,6 +13,7 @@
   filter: drop-shadow(.2rem .2rem 0var(--dark))  ;
   mix-blend-mode: difference;
   z-index: 1;
+  margin-top: -1rem;
 }
 
 .song-cover {
@@ -94,17 +95,17 @@
   font-size: 1vw;
 }
 .right-arrow-song-placement-phone {
-  grid-area: 5 / 1 / 5 / -1;
-  margin-top: 3.4vh;
+  grid-area: 3 / 1 / 9 / -1;
   text-align: right;
+  align-self: center;
 }
 .right-arrow-song-placement-desktop {
   grid-area: 3 / 6 / 3 / 6;
   margin-top: -5vh;
 }
 .left-arrow-song-placement-phone {
-  grid-area: 5 / 1 / 5 / -1;
-  margin-top: 3vh;
+  grid-area: 3 / 1 / 9 / -1;
+  align-self: center;
 }
 .left-arrow-song-placement-desktop {
   grid-area: 3 / 1 / 3 / 1;

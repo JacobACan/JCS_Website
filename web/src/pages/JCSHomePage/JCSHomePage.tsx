@@ -8,6 +8,7 @@ import ProjectsPage from '../ProjectsPage/ProjectsPage'
 import SongsPage from '../SongsPage/SongsPage'
 
 import GreenStudio from './media/GreenStudio.png'
+import OneMoreTime from './media/OneMoreTime.png'
 
 const JcsHomePage = () => {
   const r = new Responsitivity(useState())
@@ -34,7 +35,7 @@ const JcsHomePage = () => {
 
       <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
-          <img className={`background_image`} src={GreenStudio} alt="" />
+          <img className={`background_image`} src={OneMoreTime} alt="" />
           {/* <div className="image-frame"></div>
           <div className="image-frame-fill"></div> */}
           <div className="vgrid3">

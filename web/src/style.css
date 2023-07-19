@@ -2,9 +2,9 @@
 :root {
   --border-radius : 8px;
   --dark : rgb(31, 31, 31);
-  --mid : rgb(42, 102, 42);
+  --mid : rgb(161, 153, 28);
   --light : rgb(255, 245, 225);
-  --font-main : 'Bigshot One', cursive;
+  --font-main : 'Poppins', sans-serif;
   --margin-sides : 11vw;
   --page-title-font-size : 8vw
 }

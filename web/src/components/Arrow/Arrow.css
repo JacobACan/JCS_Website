@@ -4,9 +4,10 @@
  filter: hue-rotate(100);
  transform: scale(2);
  opacity: 50%;
+ filter: invert(1) drop-shadow(2px 4px 6px black);
 }
 .arrow:hover {
-  opacity: 1;
+  opacity: .7;
 }
 
 .arrow-down {
