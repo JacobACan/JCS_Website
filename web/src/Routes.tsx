@@ -9,11 +9,10 @@
 
 import { Router, Route } from '@redwoodjs/router'
 
-export const phoneWidth = 700
-
 const Routes = () => {
   return (
     <Router>
+      <Route path="/projects" page={ProjectsPage} name="projects" />
       <Route path="/songs" page={SongsPage} name="songs" />
       <Route path="/" page={JCSHomePage} name="jcsHome" />
       <Route notfound page={NotFoundPage} />

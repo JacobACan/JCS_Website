@@ -68,7 +68,6 @@
   top: 1rem;
   z-index: 1;
   mix-blend-mode: difference;
-
 }
 .song-date-phone {
   grid-area: 9 / 1 / 9 / 6;
