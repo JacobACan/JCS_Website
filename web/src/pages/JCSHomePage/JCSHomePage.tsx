@@ -7,7 +7,6 @@ import { Responsitivity } from 'src/services/responsitivity'
 import ProjectsPage from '../ProjectsPage/ProjectsPage'
 import SongsPage from '../SongsPage/SongsPage'
 
-import GreenStudio from './media/GreenStudio.png'
 import OneMoreTime from './media/OneMoreTime.png'
 
 const JcsHomePage = () => {
@@ -40,7 +39,7 @@ const JcsHomePage = () => {
           <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${r.responsitivity()}`}>
-              Jacob Canedy
+              JAC
             </h1>
             <p
               id="home-quick-description"
