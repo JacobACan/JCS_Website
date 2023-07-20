@@ -5,6 +5,9 @@ import { BounceLoader } from 'react-spinners'
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
 import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
+import SocialPlatform, {
+  SocialPlatforms,
+} from 'src/components/SocialPlatform/SocialPlatform'
 import { Responsitivity } from 'src/services/responsitivity'
 
 import PatternGreen from './media/PatternGreen.png'
@@ -136,6 +139,22 @@ const SongsPage = () => {
               ) : (
                 <></>
               )}
+              <div
+                className={`sub-division-grid${responsitivity.responsitivity()} `}
+              >
+                <SocialPlatform
+                  name={SocialPlatforms.SPOTIFY}
+                  link="https://open.spotify.com/artist/1csF3aXBFJhCXUtn8YJit6"
+                />
+                <SocialPlatform
+                  name={SocialPlatforms.APPLE_MUSIC}
+                  link="https://music.apple.com/us/artist/jacob-canedy/1481730545"
+                />
+                <SocialPlatform
+                  name={SocialPlatforms.YOUTUBE}
+                  link="https://www.youtube.com/@jacobcanedy1802"
+                />
+              </div>
               <div
                 className={`right-arrow-song-placement${responsitivity.responsitivity()}`}
               >

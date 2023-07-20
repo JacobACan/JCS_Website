@@ -113,6 +113,15 @@
   text-align: right;
 }
 
+.sub-division-grid-desktop {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 33% 33% 33%;
+  grid-area: 4 / 2 / 4 /2;
+}
+
+
+
 @keyframes scale-down {
   0% {
     transform: scale(.95);
