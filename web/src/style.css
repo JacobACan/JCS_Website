@@ -2,7 +2,7 @@
 :root {
   --border-radius : 8px;
   --dark : rgb(31, 31, 31);
-  --mid : rgb(161, 153, 28);
+  --mid : burlywood;
   --light : rgb(255, 245, 225);
   --font-main : 'Poppins', sans-serif;
   --margin-sides : 11vw;
