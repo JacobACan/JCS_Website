@@ -7,7 +7,6 @@ import { Responsitivity } from 'src/services/responsitivity'
 import ProjectsPage from '../ProjectsPage/ProjectsPage'
 import SongsPage from '../SongsPage/SongsPage'
 
-import GreenStudio from './media/GreenStudio.png'
 import OneMoreTime from './media/OneMoreTime.png'
 
 const JcsHomePage = () => {
