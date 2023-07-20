@@ -40,7 +40,7 @@ const JcsHomePage = () => {
           <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${r.responsitivity()}`}>
-              Jacob Canedy
+              JAC
             </h1>
             <p
               id="home-quick-description"
