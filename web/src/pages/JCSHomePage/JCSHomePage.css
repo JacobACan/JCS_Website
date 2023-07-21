@@ -101,7 +101,8 @@
  }
 
  .background_logo {
-   transform: translateZ(-70px) scale(.7) translateY(-20vh) rotate3d(1, .2, 0, 1.5deg);
+   transform: translateZ(-70px) scale(.7)  rotate3d(65, 38.2, 0, -2deg);
+   opacity: 78%;
  }
 
  .background_image {

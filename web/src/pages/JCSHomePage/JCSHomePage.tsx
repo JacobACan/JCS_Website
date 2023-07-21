@@ -4,9 +4,11 @@ import { MetaTags } from '@redwoodjs/web'
 
 import { Responsitivity } from 'src/services/responsitivity'
 
+import Favicon from '../../../public/favicon.png'
 import ProjectsPage from '../ProjectsPage/ProjectsPage'
 import SongsPage from '../SongsPage/SongsPage'
 
+import JacobStudio from './media/Jacob Green Studio.png'
 import OneMoreTime from './media/OneMoreTime.png'
 
 const JcsHomePage = () => {
@@ -34,19 +36,20 @@ const JcsHomePage = () => {
 
       <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
-          <img className={`background_image`} src={OneMoreTime} alt="" />
+          <img className={`background_image`} src={JacobStudio} alt="" />
           {/* <div className="image-frame"></div>
           <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
             <h1 id="home-title" className={`home-title${r.responsitivity()}`}>
-              JAC
+              {/* JAC */}
             </h1>
-            <p
+            <img className="background_logo" src={Favicon} alt="" />
+            {/* <p
               id="home-quick-description"
               className={`home-quick-description${r.responsitivity()}`}
             >
               Developer • Producer • Artist
-            </p>
+            </p> */}
             <div className="vgrid3 space-y-7">
               <button
                 id="home-button1"
