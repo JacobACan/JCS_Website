@@ -2,12 +2,15 @@
  width: 4rem;
  height: 4rem;
  filter: hue-rotate(100);
- transform: scale(2);
+ transform: scale(1);
  opacity: 50%;
  filter: invert(1) drop-shadow(2px 4px 6px black);
+ transition: filter ease .2s, transform ease .2s;
 }
 .arrow:hover {
   opacity: .7;
+  filter: invert(0);
+  transform: scale(1.2);
 }
 
 .arrow-down {

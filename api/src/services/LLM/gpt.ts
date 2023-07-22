@@ -13,14 +13,14 @@ export const generateSpotifyTrackDescription = async (
   trackInfo: Track
 ): Promise<string> => {
   const exampleTrackDescription =
-    'Emerge from the blues of 2020 with this piece that blossoms like a flower. American producer Jacob Canedy brings warmth and assurance for a brighter future.  The first single "Left it all out in the open" envelops captivating guitars and smooth beats - a sound theyve proven to be dear to theyre audience.'
+    'Emerge from the blues of 2020 with this piece that blossoms like a flower. Bringing warmth and assurance for a brighter future. Enveloping captivating guitars and smooth beats - a sound theyve proven to be dear to theyre audience.'
 
-  const prompt = `Write a 3 sentence long Spotify track description for solo artist Jacob Canedy like the one shown here : (${exampleTrackDescription}), but based on the track ${
+  const prompt = `Write a 3 sentence long Spotify track description like the one shown here : (${exampleTrackDescription}), but based on the track ${
     trackInfo.title
   }.
   The description should incorporate these track audio features (${JSON.stringify(
     trackInfo.trackAudioFeatures
-  )}), but not state the number values specifically and reference them more if their value is closer to 1.
+  )}), but not state the number values specifically and mention them more if their value is closer to 1.
   Make the description a good balance between a story, an artistic approach, and the process behind creating the song.`
   logger.debug({}, `The prompt is : ${prompt}`)
 

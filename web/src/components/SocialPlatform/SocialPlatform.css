@@ -1,0 +1,11 @@
+.social-platform {
+  transition: transform ease .2s, filter ease .2s;
+  filter: invert(1);
+  opacity: 50%;
+}
+
+.social-platform:hover {
+  cursor: pointer;
+  transform: scale(.9);
+  filter: drop-shadow(.5rem .5rem 0 var(--dark));
+}

@@ -13,6 +13,7 @@ export enum SocialPlatforms {
   SPOTIFY = 'spotify',
   YOUTUBE_MUSIC = 'youtubeMusic',
   PANDORA = 'pandora',
+  DEEZER = 'deezer',
 }
 const socialPlatformImages = {
   twitter:
@@ -30,13 +31,14 @@ const socialPlatformImages = {
   youtubeMusic:
     'https://cdn.icon-icons.com/icons2/3237/PNG/512/platform_social_media_media_youtube_music_youtube_music_icon_197269.png',
   pandora: 'https://cdn-icons-png.flaticon.com/512/732/732117.png',
+  deezer: 'https://cdn-icons-png.flaticon.com/512/5968/5968860.png',
 }
 
 const SocialPlatform = ({ name, link }: Props) => {
   return (
     <>
       <img
-        className=" relative w-[100%]"
+        className=" social-platform relative w-[100%]"
         src={socialPlatformImages[name]}
         alt={name}
         onClickCapture={() => window.open(link, '_blank')}

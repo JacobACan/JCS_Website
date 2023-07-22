@@ -8,6 +8,7 @@ import Favicon from '../../../public/favicon.png'
 import ProjectsPage from '../ProjectsPage/ProjectsPage'
 import SongsPage from '../SongsPage/SongsPage'
 
+import GenericStudio from './media/GreenStudio.png'
 import JacobStudio from './media/Jacob Green Studio.png'
 import OneMoreTime from './media/OneMoreTime.png'
 
@@ -36,7 +37,10 @@ const JcsHomePage = () => {
 
       <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
-          <img className={`background_image`} src={JacobStudio} alt="" />
+          <section className="background_image_section">
+            <img className={`background_image`} src={JacobStudio} alt="" />
+            <img className={`background_image2`} src={GenericStudio} alt="" />
+          </section>
           {/* <div className="image-frame"></div>
           <div className="image-frame-fill"></div> */}
           <div className="vgrid3">
@@ -56,14 +60,14 @@ const JcsHomePage = () => {
                 className={`home-button${r.responsitivity()}`}
                 onClick={() => scrollToLatestMusic()}
               >
-                Latest Music
+                Music 🎵
               </button>
               <button
                 id="home-button2"
                 className={`home-button${r.responsitivity()}`}
                 onClick={() => scrollToLatestProducts()}
               >
-                Latest Projects
+                Projects 💻
               </button>
             </div>
           </div>

@@ -13,7 +13,6 @@
   filter: drop-shadow(.2rem .2rem 0var(--dark))  ;
   mix-blend-mode: difference;
   z-index: 1;
-  margin-top: -1rem;
 }
 
 .song-cover {
@@ -113,12 +112,30 @@
   text-align: right;
 }
 
+
 .sub-division-grid-desktop {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: 33% 33% 33%;
-  grid-area: 4 / 2 / 4 /2;
+  grid-template-columns: 20% 20% 20% 20% 20% ;
+  grid-template-rows: 20% 20% 20% 20% 20% ;
+  perspective: 100px;
+  transform-style: preserve-3d;
+  grid-area: 4 / 2 / 4 / 4;
 }
+.sub-division-grid-desktop > * {
+  transform: scale(.8);
+}
+.sub-division-grid-phone {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20% ;
+  grid-template-rows: 20% 20% 20% 20% 20% ;
+  perspective: 100px;
+  transform-style: preserve-3d;
+  grid-area: 9 / 1 / 9 / 7;
+}
+.sub-division-grid-phone > * {
+  transform: scale(.8);
+}
+
 
 
 

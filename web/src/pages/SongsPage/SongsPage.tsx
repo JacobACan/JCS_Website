@@ -13,7 +13,7 @@ import { Responsitivity } from 'src/services/responsitivity'
 import PatternGreen from './media/PatternGreen.png'
 
 const SongsPage = () => {
-  const responsitivity = new Responsitivity(useState())
+  const r = new Responsitivity(useState())
 
   const [audio, setAudio] = useState(new Audio())
   audio.addEventListener('pause', () => {
@@ -93,55 +93,46 @@ const SongsPage = () => {
     <section className="page-section">
       <MetaTags title="Songs" description="Songs page" />
       <div id="songs-page-position"></div>
-      <div className={`theme-background${responsitivity.responsitivity()}`}>
+      <div className={`theme-background${r.responsitivity()}`}>
         <img
           src={trackData ? trackData.track.cover : PatternGreen}
-          className={`background-image${responsitivity.responsitivity()} blurdark`}
+          className={`background-image${r.responsitivity()} blurdark`}
           id="songs-page-background"
           alt=""
         />
         <section className="margin-box mt-[2vh] h-[90vh]">
-          <h1 id="songs-page-title">Latest Music</h1>
+          <h1 id="songs-page-title">Music</h1>
 
           {trackData ? (
             <>
-              <h1
-                id="song-title"
-                className={`song-title${responsitivity.responsitivity()}`}
-              >
+              <h1 id="song-title" className={`song-title${r.responsitivity()}`}>
                 {trackData.track.title}
               </h1>
               <img
                 src={trackData ? trackData.track.cover : ''}
                 alt={`${trackData ? trackData.track.title : ''}`}
-                className={`song-cover song-cover${responsitivity.responsitivity()}`}
+                className={`song-cover song-cover${r.responsitivity()}`}
                 onClickCapture={() => handleCoverClick()}
                 id="songs-page-song-cover"
               />
               {loading ? (
-                <div
-                  className={`song-cover-loader${responsitivity.responsitivity()}`}
-                >
+                <div className={`song-cover-loader${r.responsitivity()}`}>
                   <BounceLoader size={100} />
                 </div>
               ) : (
                 <></>
               )}
-              <h2 className={`song-date${responsitivity.responsitivity()}`}>
+              <h2 className={`song-date${r.responsitivity()}`}>
                 {trackData.track.release_date}
               </h2>
               {trackData.track.trackAudioFeatures ? (
-                <p
-                  className={`song-description${responsitivity.responsitivity()}`}
-                >
+                <p className={`song-description${r.responsitivity()}`}>
                   {trackData.track.description}
                 </p>
               ) : (
                 <></>
               )}
-              <div
-                className={`sub-division-grid${responsitivity.responsitivity()} `}
-              >
+              <div className={`sub-division-grid${r.responsitivity()}`}>
                 <SocialPlatform
                   name={SocialPlatforms.SPOTIFY}
                   link="https://open.spotify.com/artist/1csF3aXBFJhCXUtn8YJit6"
@@ -154,9 +145,17 @@ const SongsPage = () => {
                   name={SocialPlatforms.YOUTUBE}
                   link="https://www.youtube.com/@jacobcanedy1802"
                 />
+                <SocialPlatform
+                  name={SocialPlatforms.INSTAGRAM}
+                  link="https://www.instagram.com/jacob_jamz/"
+                />
+                <SocialPlatform
+                  name={SocialPlatforms.DEEZER}
+                  link="https://www.deezer.com/us/artist/75195292"
+                />
               </div>
               <div
-                className={`right-arrow-song-placement${responsitivity.responsitivity()}`}
+                className={`right-arrow-song-placement${r.responsitivity()}`}
               >
                 <Arrow
                   type={ArrowType.Right}
@@ -168,9 +167,7 @@ const SongsPage = () => {
                   }}
                 />
               </div>
-              <div
-                className={`left-arrow-song-placement${responsitivity.responsitivity()}`}
-              >
+              <div className={`left-arrow-song-placement${r.responsitivity()}`}>
                 <Arrow
                   type={ArrowType.Left}
                   handleClick={() => {
@@ -183,9 +180,7 @@ const SongsPage = () => {
               </div>
             </>
           ) : (
-            <div
-              className={`song-cover-loader${responsitivity.responsitivity()}`}
-            >
+            <div className={`song-cover-loader${r.responsitivity()}`}>
               <BounceLoader size={100} />
             </div>
           )}
