@@ -40,7 +40,7 @@ const ProjectsPage = () => {
           alt=""
         />
         <section className="margin-box mt-[10vh] h-[90vh]">
-          <h1 id="projects-page-title">Projects</h1>
+          <h1 id="projects-page-title">Digital Audio Projects</h1>
 
           {projectData ? (
             <>

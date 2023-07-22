@@ -101,7 +101,7 @@ const SongsPage = () => {
           alt=""
         />
         <section className="margin-box mt-[2vh] h-[90vh]">
-          <h1 id="songs-page-title">Music</h1>
+          <h1 id="songs-page-title">Latest Releases</h1>
 
           {trackData ? (
             <>

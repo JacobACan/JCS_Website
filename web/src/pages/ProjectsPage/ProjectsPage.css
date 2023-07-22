@@ -8,6 +8,7 @@
   mix-blend-mode: difference;
   z-index: 1;
   margin-top: -1rem;
+  letter-spacing: var(--page-title-spacing);
 }
 
 .project-description-phone {

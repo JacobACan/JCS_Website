@@ -53,7 +53,7 @@
   height: 4rem;
   filter: drop-shadow(.2rem .2rem 0 var(--light)) ;
   font-size: 2rem;
-  color: var(--light);
+  color: var(--dark);
   font-family: var(--font-main);
   transition: background-Color ease .2s, color ease .2s;
   transform: translateZ(-60px);
@@ -62,6 +62,7 @@
 #home-button1:hover {
   background-color: var(--light);
   color: var(--mid);
+  text-shadow: .1rem .1rem .1rem var(--dark);
 }
 
 .home-button-desktop {
