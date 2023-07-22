@@ -14,6 +14,7 @@ const ProjectsPage = () => {
     query GithubProject($input: GithubProjectInput!) {
       githubProject(input: $input) {
         name
+        user
         description
         image
       }
@@ -39,7 +40,7 @@ const ProjectsPage = () => {
           alt=""
         />
         <section className="margin-box mt-[10vh] h-[90vh]">
-          <h1 id="projects-page-title">Latest Projects</h1>
+          <h1 id="projects-page-title">Projects</h1>
 
           {projectData ? (
             <>
@@ -53,7 +54,12 @@ const ProjectsPage = () => {
                 src={projectData ? projectData.githubProject.image : ''}
                 alt={`${projectData ? projectData.githubProject.name : ''}`}
                 className={`song-cover song-cover${r.responsitivity()}`}
-                // onClickCapture={() => handleCoverClick()}
+                onClickCapture={() =>
+                  window.open(
+                    `https://github.com/${projectData.githubProject.user}/${projectData.githubProject.name}`,
+                    '_blank'
+                  )
+                }
                 id="songs-page-song-cover"
               />
               {loading ? (

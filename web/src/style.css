@@ -4,7 +4,10 @@
   --dark : rgb(31, 31, 31);
   --mid : burlywood;
   --light : rgb(255, 245, 225);
-  --font-main : 'Poppins', sans-serif;
+  --light-clear : rgba(255, 245, 225, 0.644);
+  --font-main : 'Dosis', sans-serif;
+  /* --font-main : 'Pangolin', cursive; */
+  /* --font-main : 'Poppins', sans-serif; */
   --margin-sides : 11vw;
   --page-title-font-size : 8vw
 }
@@ -17,6 +20,7 @@ body {
 
 .page-section {
   height: 100vh;
+  border-bottom: 10rem solid var(--light-clear)
 }
 
 h1 {
@@ -104,7 +108,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 .theme-background-phone {
   width: 100vw;
-  height: 150vh;
+  height: 110vh;
   position: fixed;
   background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
 }

@@ -42,6 +42,7 @@ export const githubProject: QueryResolvers['githubProject'] = async ({
   logger.debug({}, `Github Json Respinse : ${JSON.stringify(jsonRes)}`)
   const projectInfo: GithubProject = {
     name: jsonRes['data']['repository']['name'] ?? '',
+    user: input.user ?? '',
     description: jsonRes['data']['repository']['description'] ?? '',
     image: (await getProjectReadMeImage(jsonRes)) ?? '',
   }
