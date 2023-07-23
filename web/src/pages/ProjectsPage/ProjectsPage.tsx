@@ -28,7 +28,7 @@ const ProjectsPage = () => {
 
   const { data: projectData, loading } = useQuery(GITHUB_PROJECT_QUERY, {
     variables: { input: { user: 'JacobACan', projectName: 'RGBA-Synth' } },
-    onCompleted: (data) => console.log(data),
+    // onCompleted: (data) => console.log(data),
     onError: (data) => console.error(data),
   })
 

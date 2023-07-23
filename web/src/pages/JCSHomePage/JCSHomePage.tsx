@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 import { MetaTags } from '@redwoodjs/web'
 
+import WordBanner from 'src/components/WordBanner/WordBanner'
 import { Responsitivity } from 'src/services/responsitivity'
 
 import Favicon from '../../../public/favicon.png'
@@ -73,9 +74,12 @@ const JcsHomePage = () => {
           </div>
         </section>
         <section className="home-page-section">
+          <WordBanner words={['Inspire', 'Create', 'Believe']} />
           <SongsPage />
         </section>
         <section className="home-page-section">
+          <WordBanner words={['Discover', 'Automate', 'Innovate']} />
+
           <ProjectsPage />
         </section>
       </div>

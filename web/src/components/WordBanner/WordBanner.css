@@ -1,0 +1,41 @@
+.page-banner {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  margin: 0;
+  margin-left: 0vw;
+  display: flex;
+}
+.banner-word-desktop {
+  height: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 100vw;
+  width: 0;
+  color: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  font-style: italic;
+  filter: invert(1);
+
+  transition: filter ease .2s, transform ease .2s;
+}
+.banner-word-desktop:hover {
+  filter: invert(0);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.banner-word-phone {
+  height: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 100vw;
+  color: inherit;
+  font-size: inherit;
+  text-align: inherit;
+  font-style: italic;
+  filter: invert(1);
+
+  transition: filter ease .2s, transform ease .2s;
+}
+

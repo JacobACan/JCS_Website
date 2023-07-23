@@ -12,7 +12,8 @@
   --font-secondary : 'Dosis', sans-serif;
   --margin-sides : 11vw;
   --page-title-font-size : 8vw;
-  --page-title-spacing: -.5vw
+  --page-title-spacing: -.5vw;
+  --page-section-spacing: 10rem;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
 
 .page-section {
   height: 100vh;
-  border-top: 10rem solid var(--light-clear)
+  border-top: var(--page-section-spacing) solid var(--light-clear);
 }
 
 h1 {
@@ -115,7 +116,7 @@ button, input[type="submit"], input[type="reset"] {
 }
 .theme-background-phone {
   width: 100vw;
-  height: 110vh;
+  height: 100vh;
   position: fixed;
   background: linear-gradient(135deg ,var(--dark) 0% ,var(--dark) 100% );
 }
