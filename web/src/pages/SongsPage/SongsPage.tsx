@@ -11,6 +11,7 @@ import SocialPlatform, {
 import { Responsitivity } from 'src/services/responsitivity'
 
 import PatternGreen from './media/PatternGreen.png'
+import CrossHatchTexture from './media/transparent-velvet-texture.png'
 
 const SongsPage = () => {
   const r = new Responsitivity(useState())
@@ -100,8 +101,13 @@ const SongsPage = () => {
           id="songs-page-background"
           alt=""
         />
+        <img
+          src={CrossHatchTexture}
+          className={`background-image${r.responsitivity()} blurdark-less`}
+          alt=""
+        />
         <section className="margin-box mt-[2vh] h-[90vh]">
-          <h1 id="songs-page-title">Music</h1>
+          <h1 id="songs-page-title">Latest Releases</h1>
 
           {trackData ? (
             <>

@@ -4,8 +4,13 @@ import { BounceLoader } from 'react-spinners'
 
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
+import SoundHoverImage from 'src/components/SoundImage/SoundHoverImage'
 import { Responsitivity } from 'src/services/responsitivity'
-// import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
+
+import GrainTexture from './media/transparent-grain-texture.png'
+import VelvetTexture from './media/transparent-velvet-texture.png'
+
+// import Arrow, { ArrowType } from 'src/components/Arrow/Arrow' // THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE
 
 const ProjectsPage = () => {
   const r = new Responsitivity(useState())
@@ -39,8 +44,13 @@ const ProjectsPage = () => {
           id="songs-page-background"
           alt=""
         />
+        <img
+          src={VelvetTexture}
+          className={`background-image${r.responsitivity()} blurdark-less`}
+          alt=""
+        />
         <section className="margin-box mt-[10vh] h-[90vh]">
-          <h1 id="projects-page-title">Projects</h1>
+          <h1 id="projects-page-title">Digital Audio Projects</h1>
 
           {projectData ? (
             <>
@@ -50,18 +60,20 @@ const ProjectsPage = () => {
               >
                 {projectData.githubProject.name}
               </h1>
-              <img
-                src={projectData ? projectData.githubProject.image : ''}
-                alt={`${projectData ? projectData.githubProject.name : ''}`}
-                className={`song-cover song-cover${r.responsitivity()}`}
-                onClickCapture={() =>
+
+              <SoundHoverImage
+                imageLink={projectData ? projectData.githubProject.image : ''}
+                soundLink="https://drive.google.com/u/0/uc?id=1SpVV64ykvORk1M4l0uCrAPeMCH8x1US9&export=download"
+                altText={`${projectData ? projectData.githubProject.name : ''}`}
+                action={() =>
                   window.open(
                     `https://github.com/${projectData.githubProject.user}/${projectData.githubProject.name}`,
                     '_blank'
                   )
                 }
-                id="songs-page-song-cover"
+                className={`song-cover song-cover${r.responsitivity()}`}
               />
+
               {loading ? (
                 <div className={`song-cover-loader${r.responsitivity()}`}>
                   <BounceLoader size={100} />
@@ -73,7 +85,7 @@ const ProjectsPage = () => {
               <p className={`project-description${r.responsitivity()}`}>
                 {projectData.githubProject.description}
               </p>
-
+              {/* THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE */}
               {/* <div className={`right-arrow-song-placement${responsitivity()}`}>
                 <Arrow
                   type={ArrowType.Right}
