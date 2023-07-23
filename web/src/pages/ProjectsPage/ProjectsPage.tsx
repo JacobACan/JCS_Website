@@ -4,8 +4,10 @@ import { BounceLoader } from 'react-spinners'
 
 import { MetaTags, useQuery } from '@redwoodjs/web'
 
+import SoundHoverImage from 'src/components/SoundImage/SoundHoverImage'
 import { Responsitivity } from 'src/services/responsitivity'
-// import Arrow, { ArrowType } from 'src/components/Arrow/Arrow'
+
+// import Arrow, { ArrowType } from 'src/components/Arrow/Arrow' // THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE
 
 const ProjectsPage = () => {
   const r = new Responsitivity(useState())
@@ -50,18 +52,20 @@ const ProjectsPage = () => {
               >
                 {projectData.githubProject.name}
               </h1>
-              <img
-                src={projectData ? projectData.githubProject.image : ''}
-                alt={`${projectData ? projectData.githubProject.name : ''}`}
-                className={`song-cover song-cover${r.responsitivity()}`}
-                onClickCapture={() =>
+
+              <SoundHoverImage
+                imageLink={projectData ? projectData.githubProject.image : ''}
+                soundLink="https://drive.google.com/u/0/uc?id=1SpVV64ykvORk1M4l0uCrAPeMCH8x1US9&export=download"
+                altText={`${projectData ? projectData.githubProject.name : ''}`}
+                action={() =>
                   window.open(
                     `https://github.com/${projectData.githubProject.user}/${projectData.githubProject.name}`,
                     '_blank'
                   )
                 }
-                id="songs-page-song-cover"
+                className={`song-cover song-cover${r.responsitivity()}`}
               />
+
               {loading ? (
                 <div className={`song-cover-loader${r.responsitivity()}`}>
                   <BounceLoader size={100} />
@@ -73,7 +77,7 @@ const ProjectsPage = () => {
               <p className={`project-description${r.responsitivity()}`}>
                 {projectData.githubProject.description}
               </p>
-
+              {/* THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE */}
               {/* <div className={`right-arrow-song-placement${responsitivity()}`}>
                 <Arrow
                   type={ArrowType.Right}

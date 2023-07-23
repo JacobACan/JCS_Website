@@ -12,6 +12,7 @@
 
  @import 'components/Arrow/Arrow.css';
  @import 'components/SocialPlatform/SocialPlatform.css';
+ @import 'components/SoundImage/SoundHoverImage.css';
 
  @import 'pages/JCSHomePage/JCSHomePage.css';
  @import 'pages/SongsPage/SongsPage.css';
