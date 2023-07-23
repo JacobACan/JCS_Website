@@ -33,8 +33,6 @@ const JcsHomePage = () => {
 
   return (
     <>
-      <MetaTags title="JcsHome" description="JcsHome page" />
-
       <div id="paralax-wrapper" className="paralax-wrapper">
         <section className="paralax-contents">
           <section className="background_image_section">
@@ -81,6 +79,8 @@ const JcsHomePage = () => {
           <ProjectsPage />
         </section>
       </div>
+
+      <MetaTags title="Home" description="JcsHome page" />
     </>
   )
 }
