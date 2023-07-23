@@ -13,7 +13,8 @@
   --margin-sides : 11vw;
   --page-title-font-size : 8vw;
   --page-title-spacing: -.5vw;
-  --page-section-spacing: 10rem;
+  --large-spacing: 10rem;
+  --small-spacing: 5rem;
 }
 
 body {
@@ -24,9 +25,7 @@ body {
 
 .page-section {
   height: 100vh;
-  border-top: var(--page-section-spacing) solid var(--light-clear);
 }
-
 h1 {
   font-family: var(--font-main);
   color: var(--light);

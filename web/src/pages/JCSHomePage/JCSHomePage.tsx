@@ -11,7 +11,6 @@ import SongsPage from '../SongsPage/SongsPage'
 
 import GenericStudio from './media/GreenStudio.png'
 import JacobStudio from './media/Jacob Green Studio.png'
-import OneMoreTime from './media/OneMoreTime.png'
 
 const JcsHomePage = () => {
   const r = new Responsitivity(useState())
@@ -73,13 +72,12 @@ const JcsHomePage = () => {
             </div>
           </div>
         </section>
-        <section className="home-page-section">
-          <WordBanner words={['Inspire', 'Create', 'Believe']} />
+        <WordBanner words={['Inspire', 'Create', 'Believe']} />
+        <section className="page-section">
           <SongsPage />
         </section>
-        <section className="home-page-section">
-          <WordBanner words={['Discover', 'Automate', 'Innovate']} />
-
+        <WordBanner words={['Discover', 'Automate', 'Innovate']} />
+        <section className="page-section">
           <ProjectsPage />
         </section>
       </div>

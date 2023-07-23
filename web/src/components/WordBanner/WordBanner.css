@@ -1,10 +1,11 @@
 .page-banner {
-  width: 100%;
+  width: 1000%;
   text-align: center;
-  position: fixed;
+  /* position: fixed; */
   margin: 0;
   margin-left: 0vw;
   display: flex;
+  background-color: var(--light-clear);
 }
 .banner-word-desktop {
   height: inherit;

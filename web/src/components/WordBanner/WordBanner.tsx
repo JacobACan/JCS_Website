@@ -22,8 +22,8 @@ const WordBanner = ({ words, cssheight, cssColor }: Props) => {
       thisElement.style.height = cssheight
       thisElement.style.fontSize = `calc(${cssheight} - 3.5rem)`
     } else {
-      thisElement.style.height = 'var(--page-section-spacing)'
-      thisElement.style.fontSize = 'calc(var(--page-section-spacing) - 3.5rem)'
+      thisElement.style.height = 'var(--large-spacing)'
+      thisElement.style.fontSize = 'calc(var(--large-spacing) - 3.5rem)'
     }
     document
       .getElementById('paralax-wrapper')
@@ -37,7 +37,7 @@ const WordBanner = ({ words, cssheight, cssColor }: Props) => {
             elementToTop / (heightFromTopToStartAnimation / maxScrollY)
           thisElement.style.marginLeft = `-${bannerScrollPosition + 50}vw`
         } else if (elementToTop <= heightFromTopToStartAnimation) {
-          thisElement.style.marginLeft = `${maxScrollY}vw`
+          thisElement.style.marginLeft = `-${maxScrollY}vw`
         } else {
           thisElement.style.marginLeft = '0vw'
         }
@@ -45,15 +45,24 @@ const WordBanner = ({ words, cssheight, cssColor }: Props) => {
   }, [])
 
   return (
-    <div id={id} className="page-banner">
-      {words.map((word) => {
-        return (
-          <h1 className={`banner-word${r.responsitivity()}`} key={word + id}>
-            {word}
-          </h1>
-        )
-      })}
-    </div>
+    <>
+      {r.responsitivity() === '-desktop' ? (
+        <div id={id} className="page-banner">
+          {words.map((word) => {
+            return (
+              <h1
+                className={`banner-word${r.responsitivity()}`}
+                key={word + id}
+              >
+                {word}
+              </h1>
+            )
+          })}
+        </div>
+      ) : (
+        <div id={id} className="page-banner"></div>
+      )}
+    </>
   )
 }
 
