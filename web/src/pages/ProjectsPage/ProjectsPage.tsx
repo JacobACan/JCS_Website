@@ -7,6 +7,9 @@ import { MetaTags, useQuery } from '@redwoodjs/web'
 import SoundHoverImage from 'src/components/SoundImage/SoundHoverImage'
 import { Responsitivity } from 'src/services/responsitivity'
 
+import GrainTexture from './media/transparent-grain-texture.png'
+import VelvetTexture from './media/transparent-velvet-texture.png'
+
 // import Arrow, { ArrowType } from 'src/components/Arrow/Arrow' // THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE
 
 const ProjectsPage = () => {
@@ -39,6 +42,11 @@ const ProjectsPage = () => {
           src={projectData ? projectData.githubProject.image : <></>}
           className={`background-image${r.responsitivity()} blurdark`}
           id="songs-page-background"
+          alt=""
+        />
+        <img
+          src={VelvetTexture}
+          className={`background-image${r.responsitivity()} blurdark-less`}
           alt=""
         />
         <section className="margin-box mt-[10vh] h-[90vh]">
