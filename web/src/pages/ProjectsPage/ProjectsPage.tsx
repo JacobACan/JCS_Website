@@ -7,7 +7,6 @@ import { MetaTags, useQuery } from '@redwoodjs/web'
 import SoundHoverImage from 'src/components/SoundImage/SoundHoverImage'
 import { Responsitivity } from 'src/services/responsitivity'
 
-import GrainTexture from './media/transparent-grain-texture.png'
 import VelvetTexture from './media/transparent-velvet-texture.png'
 
 // import Arrow, { ArrowType } from 'src/components/Arrow/Arrow' // THIS IS FOR SCROLLING THROUGH PROJECTS IN THE FUTURE
@@ -28,7 +27,7 @@ const ProjectsPage = () => {
 
   const { data: projectData, loading } = useQuery(GITHUB_PROJECT_QUERY, {
     variables: { input: { user: 'JacobACan', projectName: 'RGBA-Synth' } },
-    onCompleted: (data) => console.log(data),
+    // onCompleted: (data) => console.log(data),
     onError: (data) => console.error(data),
   })
 
@@ -63,7 +62,7 @@ const ProjectsPage = () => {
 
               <SoundHoverImage
                 imageLink={projectData ? projectData.githubProject.image : ''}
-                soundLink="https://drive.google.com/u/0/uc?id=1SpVV64ykvORk1M4l0uCrAPeMCH8x1US9&export=download"
+                soundLink="https://drive.google.com/u/0/uc?id=1klJlukAYGlBnFoxX10983LonOdfPch9f&export=download"
                 altText={`${projectData ? projectData.githubProject.name : ''}`}
                 action={() =>
                   window.open(
