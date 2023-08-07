@@ -70,11 +70,10 @@ const JcsHomePage = () => {
             </div>
           </div>
         </section>
-        <WordBanner words={['Inspire', 'Create', 'Believe']} />
         <section className="page-section">
           <SongsPage />
         </section>
-        <WordBanner words={['Discover', 'Automate', 'Innovate']} />
+        <WordBanner words={[]} />
         <section className="page-section">
           <ProjectsPage />
         </section>
