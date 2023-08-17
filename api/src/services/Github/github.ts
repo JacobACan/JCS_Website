@@ -51,12 +51,18 @@ export const githubProject: QueryResolvers['githubProject'] = async ({
 }
 
 const getProjectReadMeImage = (jsonRes): Promise<string> => {
-  const projectReadMeText =
-    jsonRes['data']['repository']['object']['entries'][1]['object']['text']
-
-  try {
-    return projectReadMeText.split('[image]')[1].split('(')[1].split(')')[0]
-  } catch {
-    return null
+  for (
+    let i = 0;
+    i < jsonRes['data']['repository']['object']['entries'].length;
+    i++
+  ) {
+    const projectReadMeText =
+      jsonRes['data']['repository']['object']['entries'][i]['object']['text']
+    try {
+      return projectReadMeText.split('[image]')[1].split('(')[1].split(')')[0]
+    } catch {
+      continue
+    }
   }
+  return null
 }
